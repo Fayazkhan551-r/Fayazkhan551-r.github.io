@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lunch Box | Walsall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Provided Brand Colors */
+            --primary: #C85B62;   /* Muted Rose/Red */
+            --secondary: #6F7EB8; /* Periwinkle Blue */
+            --accent: #F2F2F0;    /* Warm Off-White */
+            
+            --text-dark: #2A2A2A;
+            --text-light: #FFFFFF;
+            --font-head: 'Poppins', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--accent);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .anim-pop {
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.15s; }
+        .delay-2 { animation-delay: 0.3s; }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background: var(--text-light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 1.4rem;
+        }
+
+        .contact-bar {
+            color: var(--text-light);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-light);
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            padding: 8rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(200, 91, 98, 0.45), rgba(111, 126, 184, 0.45)), url('https://loremflickr.com/1600/900/cafe,lunch?lock=601') center/cover;
+            color: var(--text-light);
+        }
+
+        .hero h1 {
+            color: var(--text-light);
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-solid {
+            background-color: var(--text-light);
+            color: var(--secondary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-solid:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Features/Menu */
+        .features-wrap {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .title-centered {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(111, 126, 184, 0.08);
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+            border-left: 8px solid var(--secondary);
+        }
+
+        .feature-row:nth-child(odd) {
+            border-left: 8px solid var(--primary);
+        }
+
+        .feature-text {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .feature-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-text p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .feature-img {
+            flex: 1;
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Reviews */
+        .reviews {
+            background-color: var(--secondary);
+            padding: 6rem 5%;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .reviews h2 {
+            color: var(--text-light);
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+        }
+
+        .review-card p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-box {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .info-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .icon-circle {
+            background: var(--accent);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            padding-top: 5px;
+        }
+
+        .map-frame {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--accent);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        @media (max-width: 900px) {
+            .feature-row, .feature-row:nth-child(even) { flex-direction: column; }
+            .contact-section { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+            .contact-bar span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <span class="logo-icon">B</span> The Lunch Box
+        </a>
+        <div class="contact-bar">
+            <span>📞</span>
+            <a href="tel:+441922453022" class="btn-outline">Call Shop</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="anim-pop">
+            <h1>Fresh, Fast, Delicious.</h1>
+            <p>Your favorite local spot in Walsall for hearty lunches, fresh sandwiches, and perfectly brewed coffee to fuel your day.</p>
+            <a href="#menu" class="btn-solid">See What's Good</a>
+        </div>
+    </header>
+
+    <section id="menu" class="features-wrap">
+        <h2 class="title-centered anim-pop">Daily Favorites</h2>
+        
+        <div class="feature-row anim-pop">
+            <div class="feature-text">
+                <h3>Freshly Made Sandwiches</h3>
+                <p>Packed with premium meats, crisp veggies, and house-made sauces. Grab one to go or enjoy it hot off the press.</p>
+            </div>
+            <div class="feature-img">
+                <img src="https://loremflickr.com/800/600/sandwich,deli?lock=602" alt="Fresh Sandwiches">
+            </div>
+        </div>
+
+        <div class="feature-row anim-pop delay-1">
+            <div class="feature-text">
+                <h3>Hot Soups & Light Bites</h3>
+                <p>Warming soups made from scratch daily, paired perfectly with our kitchen bread. The ultimate comfort food for a quick lunch break.</p>
+            </div>
+            <div class="feature-img">
+                <img src="https://loremflickr.com/800/600/soup,lunch?lock=603" alt="Hot Soups">
+            </div>
+        </div>
+
+        <div class="feature-row anim-pop delay-2">
+            <div class="feature-text">
+                <h3>Coffee & Sweet Treats</h3>
+                <p>Beat the afternoon slump. We serve freshly ground barista coffee alongside a tempting selection of cakes and treats.</p>
+            </div>
+            <div class="feature-img">
+                <img src="https://loremflickr.com/800/600/coffee,cake?lock=604" alt="Coffee and Cake">
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2 class="anim-pop">What Walsall Says</h2>
+        <div class="review-grid">
+            <div class="review-card anim-pop delay-1">
+                <div class="stars">★★★★★</div>
+                <p>"The absolute best place for a quick lunch. The sandwiches are massive and the staff are always super friendly. A must-visit on Brickyard Rd!"</p>
+                <h4>— Tom H.</h4>
+            </div>
+            <div class="review-card anim-pop delay-2">
+                <div class="stars">★★★★★</div>
+                <p>"Great value for money and the food is always piping hot and fresh. The daily specials are fantastic. Highly recommend."</p>
+                <h4>— Lisa C.</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="info-box anim-pop">
+            <h2>Visit The Shop</h2>
+            
+            <div class="contact-item">
+                <div class="icon-circle">📍</div>
+                <div>
+                    <strong>Location</strong>
+                    <p>Brickyard Rd<br>Walsall, UK</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="icon-circle">📞</div>
+                <div>
+                    <strong>Phone Orders</strong>
+                    <p><a href="tel:+441922453022" style="color: var(--secondary); font-weight: bold; text-decoration: none; font-size: 1.2rem;">+44 1922 453022</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon-circle">👋</div>
+                <div>
+                    <strong>Drop In</strong>
+                    <p>We are open for walk-ins and fast collections. Call ahead if you are in a rush!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-frame anim-pop delay-1">
+            <iframe src="https://maps.google.com/maps?q=Brickyard%20Rd%2C%20Walsall&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 The Lunch Box. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; opacity: 0.6;">Website proudly built for The Lunch Box.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.anim-pop').forEach((elem) => {
+            elem.style.animationPlayState = 'paused';
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>

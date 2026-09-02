@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Bites | Proper Breakfasts & Cafe Food in Bloxwich</title>
+    <meta name="description" content="Tasty Bites is a popular family-run cafe in Bloxwich serving hearty breakfasts, roast pork, and classic cafe meals. Dine-in, takeaway, and delivery available.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        cafe: {
+                            50: '#fdf8f4',
+                            100: '#f9eee5',
+                            200: '#f1dbcb',
+                            300: '#e5c0a8',
+                            400: '#d79e7c',
+                            500: '#cd8158',
+                            600: '#c06744',
+                            700: '#a15038',
+                            800: '#814232',
+                            900: '#68372b',
+                        },
+                        stone: {
+                            850: '#231f1e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #fdf8f4 0%, #f9eee5 100%);
+        }
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-stone-700 bg-[#fefdfc] antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-cafe-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <svg class="w-8 h-8 text-cafe-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="font-heading font-bold text-2xl text-stone-900 tracking-tight">Tasty Bites</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-stone-600 hover:text-cafe-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-stone-600 hover:text-cafe-600 font-medium transition-colors">About</a>
+                    <a href="#menu" class="text-stone-600 hover:text-cafe-600 font-medium transition-colors">Menu</a>
+                    <a href="#reviews" class="text-stone-600 hover:text-cafe-600 font-medium transition-colors">Reviews</a>
+                    <a href="#contact" class="text-stone-600 hover:text-cafe-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA Button (Desktop) -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="bg-cafe-600 hover:bg-cafe-700 text-white px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Order Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-600 hover:text-cafe-600 focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 w-64 bg-white shadow-2xl h-screen z-40 flex flex-col pt-24 px-6 border-l border-stone-100">
+            <div class="flex flex-col space-y-6">
+                <a href="#home" class="mobile-link text-lg font-medium text-stone-800 hover:text-cafe-600">Home</a>
+                <a href="#about" class="mobile-link text-lg font-medium text-stone-800 hover:text-cafe-600">About</a>
+                <a href="#menu" class="mobile-link text-lg font-medium text-stone-800 hover:text-cafe-600">Menu</a>
+                <a href="#reviews" class="mobile-link text-lg font-medium text-stone-800 hover:text-cafe-600">Reviews</a>
+                <a href="#contact" class="mobile-link text-lg font-medium text-stone-800 hover:text-cafe-600">Contact</a>
+                <div class="pt-6 border-t border-stone-100">
+                    <a href="#contact" class="mobile-link block w-full text-center bg-cafe-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Overlay for mobile menu -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-25 z-30 hidden transition-opacity"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-16 lg:pt-36 lg:pb-24 hero-gradient relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                
+                <!-- Hero Text (Left on Desktop, Top on Mobile) -->
+                <div class="w-full lg:w-1/2 flex flex-col items-start text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm border border-cafe-100 mb-6">
+                        <span class="flex items-center text-yellow-500">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </span>
+                        <span class="text-sm font-semibold text-stone-800">4.7 Google Rating (107 Reviews)</span>
+                        <a href="https://maps.app.goo.gl/YLEN8SNK6bUYhpDU8" target="_blank" class="text-xs text-cafe-600 hover:text-cafe-700 underline ml-1 font-medium">Verify</a>
+                    </div>
+                    
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-stone-900 leading-[1.1] mb-6">
+                        Proper Breakfasts & Hearty Cafe Food in Bloxwich
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-stone-600 mb-8 max-w-lg leading-relaxed">
+                        Welcome to Tasty Bites, Bloxwich's beloved family-run cafe. We serve up full English breakfasts, hot sandwiches, roast pork, and classic meals with friendly local service.
+                        <br><br>
+                        <span class="font-semibold text-stone-800">Available for Dine-In, Takeaway & Delivery.</span>
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a href="tel:+441922400041" class="flex items-center justify-center gap-2 bg-cafe-600 hover:bg-cafe-700 text-white px-8 py-3.5 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            Call Now
+                        </a>
+                        <a href="#contact" class="flex items-center justify-center gap-2 bg-white hover:bg-stone-50 border-2 border-cafe-600 text-cafe-700 px-8 py-3.5 rounded-full font-bold text-lg shadow-sm hover:shadow-md transition-all duration-300">
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image (Right on Desktop, Bottom on Mobile) -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="relative w-full max-w-[420px] mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-cafe-900/20 aspect-[3/4] sm:aspect-auto sm:h-[600px]">
+                        <img src="https://images.pexels.com/photos/30351168/pexels-photo-30351168.jpeg" 
+                             alt="Tasty Bites delicious breakfast plate" 
+                             class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
+                        
+                        <!-- Gradient Overlay to ensure safe edges -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur shadow-lg rounded-2xl p-4 border border-white/20">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-cafe-100 p-3 rounded-full text-cafe-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-heading font-bold text-stone-900 leading-tight">Freshly Prepared</p>
+                                    <p class="text-sm text-stone-600">Hearty meals all day</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Authority Strip -->
+    <section class="bg-stone-900 text-white py-10 relative z-20 -mt-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-stone-700">
+                <div class="flex flex-col items-center justify-center px-2">
+                    <span class="text-yellow-400 mb-2">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </span>
+                    <h3 class="font-bold text-lg font-heading">Rated 4.7 on Google</h3>
+                    <p class="text-stone-400 text-sm mt-1">107+ Reviews</p>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2">
+                    <span class="text-cafe-400 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </span>
+                    <h3 class="font-bold text-lg font-heading">Great Value</h3>
+                    <p class="text-stone-400 text-sm mt-1">£1–10 Per Person</p>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2">
+                    <span class="text-cafe-400 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </span>
+                    <h3 class="font-bold text-lg font-heading">3 Ways to Enjoy</h3>
+                    <p class="text-stone-400 text-sm mt-1">Dine-In, Takeout, Delivery</p>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2">
+                    <span class="text-cafe-400 mb-2">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </span>
+                    <h3 class="font-bold text-lg font-heading">Family-Run</h3>
+                    <p class="text-stone-400 text-sm mt-1">Friendly Local Cafe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Cafe Experience Section -->
+    <section id="about" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2">
+                    <span class="text-cafe-600 font-bold tracking-wider uppercase text-sm mb-3 block">Our Story</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-900 mb-6">A Proper Local Cafe Experience in Bloxwich</h2>
+                    <p class="text-stone-600 text-lg mb-6 leading-relaxed">
+                        At Tasty Bites, we believe in doing the classics right. As a family-run business, we've built a strong local reputation by serving generous, hearty breakfasts, our famous roast pork, and traditional cafe favourites at prices that make sense.
+                    </p>
+                    <p class="text-stone-600 text-lg mb-8 leading-relaxed">
+                        Whether you're stopping by for a quick breakfast deal before work, grabbing a takeaway lunch, or settling into our peaceful upstairs seating area for a relaxed meal, you'll always be greeted with friendly service and a warm atmosphere. It's why our loyal customers keep coming back week after week.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-stone-800 font-medium">
+                            <span class="bg-cafe-100 text-cafe-600 p-1 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                            Peaceful upstairs dining area
+                        </li>
+                        <li class="flex items-center gap-3 text-stone-800 font-medium">
+                            <span class="bg-cafe-100 text-cafe-600 p-1 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                            Affordable everyday food (£1-10)
+                        </li>
+                        <li class="flex items-center gap-3 text-stone-800 font-medium">
+                            <span class="bg-cafe-100 text-cafe-600 p-1 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                            Hearty portions that fill you up
+                        </li>
+                    </ul>
+                    <a href="#menu" class="inline-block border-b-2 border-cafe-600 text-cafe-700 font-bold hover:text-cafe-800 transition-colors pb-1">View Our Menu Highlights &rarr;</a>
+                </div>
+                
+                <!-- Colorful Cards Area -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl aspect-[4/5] overflow-hidden flex flex-col p-6 items-start justify-end relative group shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                             <h3 class="text-white font-heading font-bold text-2xl relative z-10 mb-2">Our Community</h3>
+                             <p class="text-blue-50 text-sm relative z-10 leading-relaxed opacity-90">Serving the heart of Bloxwich with a smile every single day.</p>
+                             <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                        </div>
+                        <div class="grid grid-rows-2 gap-4">
+                            <div class="bg-gradient-to-br from-emerald-400 to-teal-600 rounded-3xl overflow-hidden flex flex-col p-5 items-start justify-end relative group shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <h3 class="text-white font-heading font-bold text-lg relative z-10 mb-1">Fresh Ingredients</h3>
+                                <p class="text-emerald-50 text-xs relative z-10 opacity-90">Quality sourced locally.</p>
+                                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-3xl overflow-hidden flex flex-col p-5 items-start justify-end relative group shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <h3 class="text-white font-heading font-bold text-lg relative z-10 mb-1">Family Recipe</h3>
+                                <p class="text-purple-50 text-xs relative z-10 opacity-90">Generations of love.</p>
+                                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Menu Offer Section -->
+    <section class="py-20 bg-cafe-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cafe-600 font-bold tracking-wider uppercase text-sm mb-3 block">What We Offer</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-900 mb-4">Hearty Food & Flexible Service</h2>
+                <p class="text-stone-600 text-lg">From a sit-down full English to a quick takeaway cob, we cater to your daily cravings with quality ingredients and a smile.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 group">
+                    <div class="bg-orange-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-cafe-600 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-stone-900 mb-3">Full English Breakfasts</h3>
+                    <p class="text-stone-600 leading-relaxed">Hearty, proper full breakfasts made with quality ingredients to start your day right. A local favorite!</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 group">
+                    <div class="bg-orange-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-cafe-600 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-stone-900 mb-3">Sandwiches & Cobs</h3>
+                    <p class="text-stone-600 leading-relaxed">Freshly made hot and cold cobs, generously loaded with your favourite fillings for the perfect lunch.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 group">
+                    <div class="bg-orange-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-cafe-600 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-stone-900 mb-3">Roast Pork Specials</h3>
+                    <p class="text-stone-600 leading-relaxed">Our standout signature dish. Tender, flavourful roast pork that keeps customers coming back for more.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 group">
+                    <div class="bg-stone-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-stone-700 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-stone-900 mb-3">Dine-In Meals</h3>
+                    <p class="text-stone-600 leading-relaxed">Settle down in our welcoming main cafe area or head up to our peaceful upstairs seating for a relaxed meal.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 group">
+                    <div class="bg-stone-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-stone-700 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-stone-900 mb-3">Takeaway Collection</h3>
+                    <p class="text-stone-600 leading-relaxed">In a rush? Call ahead or pop in to grab your favourite cafe breakfasts and lunches on the go.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 group">
+                    <div class="bg-stone-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-stone-700 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-stone-900 mb-3">Delivery Orders</h3>
+                    <p class="text-stone-600 leading-relaxed">Can't make it to us? Get hot, delicious home-style cafe food delivered straight to your door in Bloxwich.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights Section -->
+    <section id="menu" class="py-20 lg:py-28 bg-white border-t border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12">
+                <div class="max-w-2xl">
+                    <span class="text-cafe-600 font-bold tracking-wider uppercase text-sm mb-3 block">Our Menu</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-900 mb-4">Cafe Favourites & Local Classics</h2>
+                    <p class="text-stone-600 text-lg">Affordable everyday food cooked fresh. From budget-friendly breakfast deals to our famous roast pork, there's something to fill everyone up.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="#contact" class="bg-stone-900 hover:bg-stone-800 text-white px-6 py-3 rounded-full font-semibold transition-colors inline-block">Order Now</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <!-- Highlight 1 -->
+                <div class="flex gap-4 items-start pb-6 border-b border-stone-100">
+                    <div class="w-20 h-20 bg-cafe-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-cafe-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-heading text-xl font-bold text-stone-900">Full English Breakfast</h3>
+                            <span class="text-cafe-600 font-bold text-sm bg-cafe-50 px-2 py-1 rounded">Popular</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed">A hearty plate of all the traditional morning classics. Guaranteed to set you up for the day.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="flex gap-4 items-start pb-6 border-b border-stone-100">
+                    <div class="w-20 h-20 bg-cafe-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-cafe-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-heading text-xl font-bold text-stone-900">Breakfast Deals</h3>
+                            <span class="text-stone-500 font-medium text-sm">Great Value</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed">Budget-friendly morning combinations offering unbeatable value without compromising on taste.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="flex gap-4 items-start pb-6 border-b border-stone-100">
+                    <div class="w-20 h-20 bg-cafe-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-cafe-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-heading text-xl font-bold text-stone-900">Signature Roast Pork</h3>
+                            <span class="text-cafe-600 font-bold text-sm bg-cafe-50 px-2 py-1 rounded">Standout</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed">Our most talked-about dish. Tender, flavourful and a true Bloxwich favourite for lunch.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 4 -->
+                <div class="flex gap-4 items-start pb-6 border-b border-stone-100">
+                    <div class="w-20 h-20 bg-cafe-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-cafe-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-heading text-xl font-bold text-stone-900">Sandwiches & Cobs</h3>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed">Generously filled hot and cold cobs, perfect for a quick, satisfying bite on the go or dining in.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 5 -->
+                <div class="flex gap-4 items-start pb-6 md:border-b md:border-stone-100">
+                    <div class="w-20 h-20 bg-cafe-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-cafe-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-heading text-xl font-bold text-stone-900">Sausage, Chips & Bread</h3>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed">A comforting, proper cafe staple served with buttered bread. Simple, hearty, and delicious.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 6 -->
+                <div class="flex gap-4 items-start">
+                    <div class="w-20 h-20 bg-cafe-50 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-cafe-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-heading text-xl font-bold text-stone-900">Classic Cafe Meals</h3>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed">Traditional home-style cooking. All your favourite hot lunches served with generous portions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 lg:py-28 bg-[#faf8f5] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Trust Banner -->
+            <div class="bg-white rounded-2xl shadow-lg border border-stone-100 p-8 mb-16 text-center max-w-3xl mx-auto transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="flex justify-center mb-4 text-yellow-400">
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-900 mb-2">Rated 4.7 on Google</h2>
+                <p class="text-stone-600 mb-6 text-lg">See why Bloxwich locals choose Tasty Bites for breakfast and lunch.</p>
+                <a href="https://maps.app.goo.gl/YLEN8SNK6bUYhpDU8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.633 0 12.017 0z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                    Click to Verify Reviews
+                </a>
+            </div>
+
+            <!-- Review Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="flex text-yellow-400 mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-stone-700 italic flex-grow mb-4">"Great breakfasts, good prices and a friendly local feel. Always a welcoming atmosphere when you walk in."</p>
+                    <div class="font-semibold text-stone-900 text-sm">- Local Customer</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="flex text-yellow-400 mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-stone-700 italic flex-grow mb-4">"Best cafe in Bloxwich. Roast pork to die for and the breakfast is out of this world."</p>
+                    <div class="font-semibold text-stone-900 text-sm">- Regular Diner</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="flex text-yellow-400 mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-stone-700 italic flex-grow mb-4">"Food's great, the upstairs area is nice and peaceful, and the prices are very reasonable."</p>
+                    <div class="font-semibold text-stone-900 text-sm">- Dine-in Guest</div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="flex text-yellow-400 mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-stone-700 italic flex-grow mb-4">"Amazing quality. One of the best, most hearty cafe meals I've had in years. Highly recommend stopping by."</p>
+                    <div class="font-semibold text-stone-900 text-sm">- Recent Visitor</div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="flex text-yellow-400 mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-stone-700 italic flex-grow mb-4">"Beautiful food, the staff were incredibly friendly, and overall a very nice atmosphere for lunch."</p>
+                    <div class="font-semibold text-stone-900 text-sm">- Lunch Customer</div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full">
+                    <div class="flex text-yellow-400 mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-stone-700 italic flex-grow mb-4">"Lovely ladies working there, food was lovely and the breakfast deals are such good value for money."</p>
+                    <div class="font-semibold text-stone-900 text-sm">- Breakfast Regular</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process / How to Order -->
+    <section class="py-16 bg-white border-t border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-12">How To Get Your Food</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="w-16 h-16 bg-cafe-100 text-cafe-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white shadow-sm relative z-10">1</div>
+                    <h3 class="font-bold text-lg text-stone-900 mb-2">Pick Your Meal</h3>
+                    <p class="text-stone-600 text-sm">Choose from our hearty breakfasts, cobs or hot meals.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="w-16 h-16 bg-cafe-100 text-cafe-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white shadow-sm relative z-10">2</div>
+                    <h3 class="font-bold text-lg text-stone-900 mb-2">Call or Visit</h3>
+                    <p class="text-stone-600 text-sm">Drop into our Bloxwich cafe or give us a quick ring.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="w-16 h-16 bg-cafe-100 text-cafe-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white shadow-sm relative z-10">3</div>
+                    <h3 class="font-bold text-lg text-stone-900 mb-2">Choose Service</h3>
+                    <p class="text-stone-600 text-sm">Dine in upstairs, grab a takeaway, or ask for delivery.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="w-16 h-16 bg-cafe-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-4 border-white shadow-sm relative z-10">4</div>
+                    <h3 class="font-bold text-lg text-stone-900 mb-2">Enjoy Proper Food</h3>
+                    <p class="text-stone-600 text-sm">Tuck into a generous portion of honest, delicious cafe food.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Vibrant Cards Section -->
+    <section class="py-20 bg-cafe-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl font-bold text-stone-900">Inside Tasty Bites</h2>
+                <p class="text-stone-600 mt-3">A glimpse of our proper cafe food and welcoming atmosphere.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Card 1 -->
+                <div class="aspect-square rounded-2xl flex flex-col p-6 items-start justify-end relative group overflow-hidden bg-gradient-to-br from-cyan-400 to-blue-500 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-white font-heading font-bold text-xl relative z-10 mb-1">Hearty Breakfasts</h3>
+                    <p class="text-cyan-50 text-sm relative z-10 opacity-90">The perfect start to your day.</p>
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                </div>
+                <!-- Card 2 -->
+                <div class="aspect-square rounded-2xl flex flex-col p-6 items-start justify-end relative group overflow-hidden bg-gradient-to-br from-violet-500 to-purple-600 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-white font-heading font-bold text-xl relative z-10 mb-1">Roast Pork</h3>
+                    <p class="text-violet-50 text-sm relative z-10 opacity-90">Our legendary lunchtime special.</p>
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                </div>
+                <!-- Card 3 -->
+                <div class="aspect-square rounded-2xl flex flex-col p-6 items-start justify-end relative group overflow-hidden bg-gradient-to-br from-emerald-400 to-green-600 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hidden sm:flex">
+                    <h3 class="text-white font-heading font-bold text-xl relative z-10 mb-1">Warm Atmosphere</h3>
+                    <p class="text-emerald-50 text-sm relative z-10 opacity-90">A place for the whole family.</p>
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                </div>
+                 <!-- Card 4 -->
+                <div class="aspect-square rounded-2xl flex flex-col p-6 items-start justify-end relative group overflow-hidden bg-gradient-to-br from-rose-400 to-red-500 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hidden lg:flex">
+                    <h3 class="text-white font-heading font-bold text-xl relative z-10 mb-1">Hot Cobs</h3>
+                    <p class="text-rose-50 text-sm relative z-10 opacity-90">Generously filled and fresh.</p>
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                </div>
+                 <!-- Card 5 -->
+                <div class="aspect-square rounded-2xl flex flex-col p-6 items-start justify-end relative group overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hidden lg:flex">
+                    <h3 class="text-white font-heading font-bold text-xl relative z-10 mb-1">Sweet Treats</h3>
+                    <p class="text-amber-50 text-sm relative z-10 opacity-90">Perfect with a hot cup of tea.</p>
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                </div>
+                 <!-- Card 6 -->
+                <div class="aspect-square rounded-2xl flex flex-col p-6 items-start justify-end relative group overflow-hidden bg-gradient-to-br from-indigo-400 to-cyan-600 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hidden lg:flex">
+                    <h3 class="text-white font-heading font-bold text-xl relative z-10 mb-1">Dine In</h3>
+                    <p class="text-indigo-50 text-sm relative z-10 opacity-90">Peaceful upstairs seating.</p>
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strong CTA Section -->
+    <section class="py-24 bg-cafe-600 relative">
+        <!-- Decorative pattern overlay -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+                Looking for a proper breakfast in Bloxwich or an easy local takeaway that actually fills you up?
+            </h2>
+            <p class="text-cafe-100 text-lg sm:text-xl mb-10">
+                Join hundreds of loyal locals who choose Tasty Bites every week.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+441922400041" class="bg-white text-cafe-700 hover:bg-stone-50 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    Call To Order: 01922 400041
+                </a>
+                <a href="#contact" class="bg-stone-900 text-white hover:bg-stone-800 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all flex items-center justify-center">
+                    Message Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Details -->
+                <div>
+                    <span class="text-cafe-600 font-bold tracking-wider uppercase text-sm mb-3 block">Get In Touch</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-900 mb-8">Visit Tasty Bites Today</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cafe-50 p-3 rounded-full text-cafe-600 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 mb-1">Our Location</h3>
+                                <p class="text-stone-600">12 Samuel St<br>Bloxwich, Walsall<br>WS3 2EU, United Kingdom</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cafe-50 p-3 rounded-full text-cafe-600 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 mb-1">Phone Number</h3>
+                                <a href="tel:+441922400041" class="text-cafe-600 hover:text-cafe-700 font-semibold underline text-lg">+44 1922 400041</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cafe-50 p-3 rounded-full text-cafe-600 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 mb-1">Service & Hours</h3>
+                                <p class="text-stone-600 mb-2">Available for: <span class="font-semibold text-stone-800">Dine-In, Takeout, Delivery</span></p>
+                                <p class="inline-block bg-orange-100 text-cafe-700 text-sm font-bold px-3 py-1 rounded">Closes 2 PM Daily</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-stone-50 p-8 rounded-3xl border border-stone-100 shadow-sm">
+                    <h3 class="font-heading text-2xl font-bold text-stone-900 mb-6">Send an Enquiry or Pre-Order</h3>
+                    <form action="#" method="POST" class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you! This is a demo form.');">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-stone-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 bg-white transition-all">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-stone-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 bg-white transition-all">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-stone-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 bg-white transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="type" class="block text-sm font-medium text-stone-700 mb-1">Booking or Order Type</label>
+                            <select id="type" name="type" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 bg-white transition-all">
+                                <option value="">Please select an option</option>
+                                <option value="takeaway">Takeaway Pre-Order</option>
+                                <option value="delivery">Delivery Request</option>
+                                <option value="dine-in">Dine-In Enquiry</option>
+                                <option value="other">General Question</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-stone-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 bg-white transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-bold py-3.5 rounded-xl transition-colors shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <div class="flex items-center gap-2 mb-6">
+                <svg class="w-6 h-6 text-cafe-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="font-heading font-bold text-2xl text-white tracking-tight">Tasty Bites</span>
+            </div>
+            
+            <p class="mb-8 max-w-2xl text-sm leading-relaxed">
+                Bloxwich's favourite local spot for hearty breakfasts, roast pork, and classic cafe meals. Available for dine-in upstairs or downstairs, collection, and local delivery. 
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-wider mb-8 opacity-60">
+                <span>Cafe Bloxwich</span>
+                <span>•</span>
+                <span>Breakfast Cafe Bloxwich</span>
+                <span>•</span>
+                <span>Takeaway Cafe Walsall</span>
+                <span>•</span>
+                <span>Family Run Cafe Bloxwich</span>
+                <span>•</span>
+                <span>Roast Pork Cafe Bloxwich</span>
+            </div>
+
+            <div class="text-xs border-t border-stone-800 pt-8 w-full">
+                &copy; <script>document.write(new Date().getFullYear())</script> Tasty Bites. All rights reserved. <br class="sm:hidden">
+                <a href="#" class="hover:text-white transition-colors ml-2 sm:ml-0">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-overlay');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            menu.classList.toggle('open');
+            if(menu.classList.contains('open')) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-sm');
+                nav.classList.remove('border-transparent');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.add('border-transparent');
+            }
+        });
+    </script>
+</body>
+</html>

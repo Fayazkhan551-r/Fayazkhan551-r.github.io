@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bollywood Cafe | Walsall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Provided Brand Colors */
+            --primary: #D04A2E;   /* Terracotta Red */
+            --secondary: #D7B07A; /* Sand/Gold */
+            --accent: #F3E4CB;    /* Light Cream */
+            
+            --text-dark: #2E2522;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--accent);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .anim-up {
+            animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+
+        /* Navbar */
+        nav {
+            background-color: rgba(46, 37, 34, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: var(--font-head);
+            font-size: 2.2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: color 0.3s;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 12rem 5% 6rem;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(46, 37, 34, 0.55), rgba(46, 37, 34, 0.7)), url('https://images.pexels.com/photos/12259924/pexels-photo-12259924.jpeg') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.6);
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            color: var(--accent);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+            font-weight: 300;
+        }
+
+        .btn-main {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(208, 74, 46, 0.3);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(208, 74, 46, 0.4);
+            background-color: var(--text-dark);
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .hero-images img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 200px 200px 0 0;
+            border: 8px solid #fff;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .hero-images img:nth-child(2) {
+            transform: translateY(30px);
+        }
+
+        /* Flavors Section */
+        .flavors {
+            padding: 8rem 5%;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 50px 50px 0 0;
+            position: relative;
+            z-index: 10;
+            margin-top: -30px;
+        }
+
+        .flavors h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .flavors-subtitle {
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flavor-card {
+            padding: 2rem;
+            background: var(--accent);
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .flavor-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--secondary);
+        }
+
+        .flavor-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Community / Reviews */
+        .community {
+            padding: 6rem 5%;
+            background-color: var(--secondary);
+            color: var(--text-dark);
+        }
+
+        .comm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .comm-text h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .quote {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .quote p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .quote strong {
+            font-family: var(--font-head);
+            color: var(--primary);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 6rem 5%;
+            text-align: center;
+            background: #fff;
+        }
+
+        .contact-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--accent);
+            padding: 4rem;
+            border-radius: var(--radius);
+        }
+
+        .contact-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .c-item h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .c-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: var(--radius);
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--secondary);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        @media (max-width: 900px) {
+            .hero-images { flex-direction: column; align-items: center; gap: 1rem; }
+            .hero-images img { width: 100%; max-width: 400px; border-radius: 20px; }
+            .hero-images img:nth-child(2) { transform: translateY(0); }
+            .hero h1 { font-size: 3.5rem; }
+            .comm-grid, .contact-details { grid-template-columns: 1fr; flex-direction: column; gap: 2rem; text-align: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Bollywood <span>Cafe</span></a>
+        <div class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#community">Reviews</a>
+            <a href="#visit">Visit</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content anim-up">
+            <h1>Spices. Culture.<br><span>Community.</span></h1>
+            <p>Welcome to Bollywood Cafe. Discover the vibrant, authentic flavors of India wrapped in a warm, welcoming cafe setting right here in Walsall.</p>
+            <a href="tel:+447503909497" class="btn-main">Book a Table</a>
+            
+            <div class="hero-images">
+                <img src="https://loremflickr.com/600/800/indianfood,curry?lock=1201" alt="Indian Cuisine" class="anim-up delay-1">
+                <img src="https://loremflickr.com/600/800/cafe,tea?lock=1202" alt="Chai Tea" class="anim-up delay-2">
+            </div>
+        </div>
+    </header>
+
+    <section id="menu" class="flavors">
+        <h2 class="anim-up">A Taste of India</h2>
+        <p class="flavors-subtitle anim-up">Fresh ingredients, traditional recipes.</p>
+
+        <div class="flavor-grid">
+            <div class="flavor-card anim-up">
+                <img src="https://loremflickr.com/300/300/samosa,snack?lock=1203" alt="Street Food">
+                <h3>Street Food & Snacks</h3>
+                <p>Crispy samosas, tangy chaats, and flavorful pakoras. The perfect light bites to accompany your afternoon tea or coffee.</p>
+            </div>
+            <div class="flavor-card anim-up delay-1">
+                <img src="https://loremflickr.com/300/300/curry,bowl?lock=1204" alt="Hearty Curries">
+                <h3>Hearty Curries</h3>
+                <p>Rich, aromatic curries slow-cooked to perfection, served with fluffy basmati rice and freshly baked warm naan bread.</p>
+            </div>
+            <div class="flavor-card anim-up delay-2">
+                <img src="https://loremflickr.com/300/300/chai,tea?lock=1205" alt="Authentic Chai">
+                <h3>Authentic Chai</h3>
+                <p>Our signature masala chai. Brewed fresh daily with a traditional blend of warming spices, milk, and black tea leaves.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="community">
+        <div class="comm-grid">
+            <div class="comm-text anim-up">
+                <h2>Loved by the<br>Walsall Locals</h2>
+                <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2rem;">We are incredibly proud of the community we have built around great food and warm hospitality.</p>
+            </div>
+            <div class="comm-quotes">
+                <div class="quote anim-up delay-1">
+                    <p>"The food here is absolutely stunning. The atmosphere is vibrant and welcoming, and the chai is the best I've had in the UK."</p>
+                    <strong>— Priya M.</strong>
+                </div>
+                <div class="quote anim-up delay-2">
+                    <p>"A real hidden gem on Pelsall Lane. The staff treat you like family, and the curries are packed with authentic flavor."</p>
+                    <strong>— James T.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visit" class="contact">
+        <div class="contact-box anim-up">
+            <h2>Join Us for a Meal</h2>
+            
+            <div class="contact-details">
+                <div class="c-item">
+                    <h4>Address</h4>
+                    <p style="font-size: 1.1rem;">13 Pelsall Lane<br>Walsall, UK</p>
+                </div>
+                <div class="c-item">
+                    <h4>Reservations</h4>
+                    <a href="tel:+447503909497">+44 7503 909497</a>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Call us to book a table or order takeaway.</p>
+                </div>
+            </div>
+
+            <div class="map anim-up delay-1">
+                <iframe src="https://maps.google.com/maps?q=13%20Pelsall%20Lane%2C%20Walsall&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bollywood Cafe. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Website proudly built for Bollywood Cafe.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.anim-up').forEach((elem) => {
+            elem.style.animationPlayState = 'paused';
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>

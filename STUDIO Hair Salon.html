@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO | Professional Hair Salon in Dartford</title>
+    <meta name="description" content="STUDIO is a professional, team-led hair salon in Dartford, UK. Offering consistent results, clear pricing, and a clean, welcoming environment.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#111111',
+                            dark: '#222222',
+                            gray: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .hero-bg-wrapper {
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Adjusted Street View parameters: wider FOV (80) to include windows and entrance, slight pitch (5) */
+            background-image: url('https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=02fPRI1mcJ1hUxlveTUN0Q&cb_client=search.gws-prod.gps&w=1920&h=1080&yaw=352.3621&pitch=5&thumbfov=80');
+            background-size: cover;
+            background-position: center 20%; /* Aligns image closer to the top to naturally crop the foreground car out */
+            background-repeat: no-repeat;
+            transform: scale(1.05); /* Subtle zoom to maintain full shopfront context without cutting off edges */
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Structured, clean image hover effects */
+        .img-structured {
+            transition: transform 0.3s ease;
+        }
+        .img-structured:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-brand-dark bg-white">
+
+    <!-- 1. NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-brand-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-brand-black uppercase tracking-widest">
+                        STUDIO
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-sm font-medium text-gray-600 hover:text-brand-black transition">Services</a>
+                    <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-brand-black transition">Pricing</a>
+                    <a href="#reviews" class="text-sm font-medium text-gray-600 hover:text-brand-black transition">Reviews</a>
+                    <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-brand-black transition">Contact</a>
+                    <a href="#contact" class="bg-brand-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition rounded-sm shadow-sm">
+                        Book Appointment
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-black focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brand-border">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100">Services</a>
+                <a href="#pricing" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100">Pricing</a>
+                <a href="#reviews" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100">Reviews</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100">Contact</a>
+                <a href="#contact" class="block mt-4 text-center bg-brand-black text-white px-6 py-3 text-base font-medium hover:bg-gray-800 transition rounded-sm">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center hero-bg-wrapper mt-20 md:mt-0">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto hero-content mt-16 md:mt-0">
+            <!-- Trust Indicators Top -->
+            <div class="flex flex-wrap justify-center items-center gap-4 mb-6 text-sm md:text-base font-medium text-white/90">
+                <span class="flex items-center"><i class="fas fa-star text-yellow-400 mr-2 text-xs"></i> 4.9★ Rated</span>
+                <span class="hidden sm:inline text-white/40">|</span>
+                <span class="flex items-center"><i class="fas fa-users mr-2 text-xs"></i> Experienced Team</span>
+                <span class="hidden sm:inline text-white/40">|</span>
+                <span class="flex items-center"><i class="fas fa-tag mr-2 text-xs"></i> Clear Pricing</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight">
+                Hairdressing <br/><span class="text-gray-300">Done Properly</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Professional, friendly salon in Dartford with clear pricing and consistent results.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto bg-white text-brand-black px-8 py-4 text-sm font-semibold uppercase tracking-wide hover:bg-gray-100 transition shadow-lg rounded-sm">
+                    Book Appointment
+                </a>
+                <a href="tel:+441322310000" class="w-full sm:w-auto border border-white text-white px-8 py-4 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-brand-black transition rounded-sm bg-transparent backdrop-blur-sm">
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HERO IMAGE SECTION (MANDATORY FORMAT) -->
+    <section class="bg-white py-12 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Hair Styling at STUDIO" class="w-full h-full object-cover img-structured">
+                </div>
+                <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-sm">
+                    <img src="https://images.pexels.com/photos/10318038/pexels-photo-10318038.jpeg" alt="Clean and Modern Salon Interior" class="w-full h-full object-cover img-structured">
+                </div>
+                <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Consistent Quality Hair Results" class="w-full h-full object-cover img-structured">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TRUST STRIP -->
+    <section class="bg-brand-gray py-8 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-gray-300">
+                <div class="px-4">
+                    <div class="text-brand-black mb-2"><i class="fas fa-star text-xl"></i></div>
+                    <p class="text-sm font-semibold text-gray-800">4.9★ Rated Locally</p>
+                </div>
+                <div class="px-4">
+                    <div class="text-brand-black mb-2"><i class="fas fa-cut text-xl"></i></div>
+                    <p class="text-sm font-semibold text-gray-800">Professional Team</p>
+                </div>
+                <div class="px-4">
+                    <div class="text-brand-black mb-2"><i class="fas fa-spray-can text-xl"></i></div>
+                    <p class="text-sm font-semibold text-gray-800">Clean & Modern Salon</p>
+                </div>
+                <div class="px-4 border-r-0 md:border-r-0">
+                    <div class="text-brand-black mb-2"><i class="fas fa-pound-sign text-xl"></i></div>
+                    <p class="text-sm font-semibold text-gray-800">Clear Pricing Structure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SERVICES SECTION -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-brand-black mb-4">Our Services</h2>
+                <div class="w-16 h-1 bg-brand-black mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg">Reliable, consistent results delivered by our structured team of expert stylists.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Item -->
+                <div class="border border-brand-border p-8 hover:shadow-md transition bg-white rounded-sm group">
+                    <div class="w-12 h-12 bg-brand-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-black group-hover:text-white transition">
+                        <i class="fas fa-scissors text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-black">Haircuts & Styling</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Precision cutting and professional styling tailored to your face shape and lifestyle. Consistent excellence every time.</p>
+                </div>
+
+                <!-- Service Item -->
+                <div class="border border-brand-border p-8 hover:shadow-md transition bg-white rounded-sm group">
+                    <div class="w-12 h-12 bg-brand-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-black group-hover:text-white transition">
+                        <i class="fas fa-palette text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-black">Colouring & Highlights</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Expert color applications, from subtle highlights to complete color transformations, using premium products.</p>
+                </div>
+
+                <!-- Service Item -->
+                <div class="border border-brand-border p-8 hover:shadow-md transition bg-white rounded-sm group">
+                    <div class="w-12 h-12 bg-brand-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-black group-hover:text-white transition">
+                        <i class="fas fa-wind text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-black">Blow Dry & Finish</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Professional blow dries that last. Walk out with a polished, flawless finish perfect for any occasion.</p>
+                </div>
+
+                <!-- Service Item -->
+                <div class="border border-brand-border p-8 hover:shadow-md transition bg-white rounded-sm group">
+                    <div class="w-12 h-12 bg-brand-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-black group-hover:text-white transition">
+                        <i class="fas fa-magic text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-black">Restyling</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Ready for a change? Comprehensive consultations followed by a completely new, structured look.</p>
+                </div>
+
+                <!-- Service Item -->
+                <div class="border border-brand-border p-8 hover:shadow-md transition bg-white rounded-sm group">
+                    <div class="w-12 h-12 bg-brand-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-black group-hover:text-white transition">
+                        <i class="fas fa-spa text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-black">Treatments</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Deep conditioning and restorative treatments to maintain the health, strength, and integrity of your hair.</p>
+                </div>
+                
+                <!-- Placeholder for grid balance -->
+                <div class="hidden lg:flex border border-transparent p-8 items-center justify-center bg-brand-gray/50 rounded-sm">
+                    <a href="#pricing" class="text-brand-black font-semibold uppercase tracking-wider text-sm flex items-center hover:text-gray-600 transition">
+                        View Full Pricing <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SPECIALISATION SECTION -->
+    <section id="pricing" class="py-20 bg-brand-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">The STUDIO Standard</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        We don't believe in surprises. We believe in providing a structured, reliable environment where you know exactly what you're getting: exceptional service, professional advice, and consistent results.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gray-300 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Structured Pricing (No Surprises)</h4>
+                                <p class="text-sm text-gray-400 mt-1">Clear, upfront costs discussed before any service begins.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gray-300 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Experienced Stylists</h4>
+                                <p class="text-sm text-gray-400 mt-1">A team-led approach by professionals with years of industry experience.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gray-300 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Clean & Professional Environment</h4>
+                                <p class="text-sm text-gray-400 mt-1">A pristine salon space maintained to the highest hygiene standards.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gray-300 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Consistent Quality Results</h4>
+                                <p class="text-sm text-gray-400 mt-1">Reliable techniques ensuring you leave happy, visit after visit.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gray-300 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Relaxed but Organised Service</h4>
+                                <p class="text-sm text-gray-400 mt-1">Friendly staff in a highly efficient, well-managed setting.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional styling at STUDIO" class="rounded-sm shadow-2xl z-10 relative object-cover aspect-[4/5] grayscale hover:grayscale-0 transition duration-500">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-gray-700 rounded-sm z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. REVIEWS SECTION -->
+    <section id="reviews" class="py-24 bg-white border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+            <a href="https://maps.app.goo.gl/1YjRLiraxCUPmfsY9" target="_blank" rel="noopener noreferrer" class="inline-flex flex-col p-6 rounded-md hover:bg-gray-50 transition duration-300 group">
+                <!-- Stars aligned over text -->
+                <div class="pl-12 mb-1.5 flex space-x-1">
+                    <i class="fas fa-star text-[#FFC107] text-xl"></i>
+                    <i class="fas fa-star text-[#FFC107] text-xl"></i>
+                    <i class="fas fa-star text-[#FFC107] text-xl"></i>
+                    <i class="fas fa-star text-[#FFC107] text-xl"></i>
+                    <i class="fas fa-star text-[#FFC107] text-xl"></i>
+                </div>
+                
+                <!-- Google Logo & Text -->
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-8 h-8 mr-4">
+                        <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.26-2.628-.707-3.832l-3.293-1.085z"/>
+                        <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                        <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                        <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.26-2.628-.707-3.832l-3.293-1.085z"/>
+                    </svg>
+                    <span class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">Rated 4.9★ on Google</span>
+                </div>
+                
+                <!-- Verification Link -->
+                <div class="pl-12 mt-1.5">
+                    <span class="text-gray-500 text-sm group-hover:text-gray-800 transition underline decoration-transparent group-hover:decoration-gray-300 underline-offset-4">Click to verify reviews</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 8. GALLERY SECTION (MANDATORY FORMAT) -->
+    <section class="bg-white py-12 border-t border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+             <h2 class="text-2xl font-bold tracking-tight text-brand-black">Inside STUDIO</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-sm">
+                <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Client Hair Color Transformation" class="w-full h-full object-cover img-structured">
+            </div>
+            <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-sm">
+                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Hair Washing Station" class="w-full h-full object-cover img-structured">
+            </div>
+            <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-sm">
+                <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Precision Hair Cutting Tools" class="w-full h-full object-cover img-structured">
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. PROCESS SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-brand-black mb-4">How We Work</h2>
+                <div class="w-16 h-1 bg-brand-black mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gray-200 -z-10 -translate-y-1/2"></div>
+                
+                <!-- Step 1 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-md border-4 border-white">
+                        01
+                    </div>
+                    <h3 class="font-bold text-brand-black text-lg mb-2">Book Appointment</h3>
+                    <p class="text-gray-600 text-sm">Secure your spot online or call our friendly Dartford team.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-md border-4 border-white">
+                        02
+                    </div>
+                    <h3 class="font-bold text-brand-black text-lg mb-2">Discuss Your Style</h3>
+                    <p class="text-gray-600 text-sm">Clear consultation covering options, pricing, and expectations.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-md border-4 border-white">
+                        03
+                    </div>
+                    <h3 class="font-bold text-brand-black text-lg mb-2">Professional Service</h3>
+                    <p class="text-gray-600 text-sm">Relax in our clean, organised salon while experts work.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-md border-4 border-white">
+                        04
+                    </div>
+                    <h3 class="font-bold text-brand-black text-lg mb-2">Leave Confident</h3>
+                    <p class="text-gray-600 text-sm">Walk out with consistent, high-quality results every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CTA SECTION -->
+    <section class="bg-brand-gray py-24 border-t border-brand-border">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-brand-black mb-6 tracking-tight">Book Your Appointment Today</h2>
+            <p class="text-xl text-gray-600 mb-10">A professional, reliable salon you can trust.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto bg-brand-black text-white px-10 py-4 text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition rounded-sm shadow-md">
+                    Book Now
+                </a>
+                <a href="tel:+441322310000" class="w-full sm:w-auto border-2 border-brand-black text-brand-black px-10 py-4 text-sm font-semibold uppercase tracking-wide hover:bg-brand-black hover:text-white transition rounded-sm">
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-brand-black mb-6">Visit STUDIO</h2>
+                    <p class="text-gray-600 mb-10 leading-relaxed">Ready to experience hairdressing done properly? Reach out to schedule your appointment. We look forward to welcoming you.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-brand-gray rounded-sm flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-brand-black text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-brand-black">Location</h4>
+                                <p class="text-gray-600 mt-1">Waterside<br>Dartford, DA1 4JD<br>United Kingdom</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-brand-gray rounded-sm flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt text-brand-black text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-brand-black">Phone</h4>
+                                <a href="tel:+441322310000" class="text-gray-600 mt-1 hover:text-brand-black transition block">
+                                    +44 1322 310000
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-brand-gray rounded-sm flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-clock text-brand-black text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-brand-black">Hours</h4>
+                                <p class="text-gray-600 mt-1">Mon-Sat: Open until 5:30 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white border border-brand-border p-8 rounded-sm shadow-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-brand-black">Make an Enquiry</h3>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full border border-gray-300 px-4 py-3 rounded-sm focus:outline-none focus:ring-1 focus:ring-brand-black focus:border-brand-black transition" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 px-4 py-3 rounded-sm focus:outline-none focus:ring-1 focus:ring-brand-black focus:border-brand-black transition" required>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interested In</label>
+                            <select id="service" name="service" class="w-full border border-gray-300 px-4 py-3 rounded-sm focus:outline-none focus:ring-1 focus:ring-brand-black focus:border-brand-black transition bg-white">
+                                <option value="">Select a service...</option>
+                                <option value="haircut">Haircut & Styling</option>
+                                <option value="colour">Colouring & Highlights</option>
+                                <option value="blowdry">Blow Dry & Finish</option>
+                                <option value="restyling">Restyling</option>
+                                <option value="treatment">Hair Treatment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Additional Notes (Optional)</label>
+                            <textarea id="message" name="message" rows="3" class="w-full border border-gray-300 px-4 py-3 rounded-sm focus:outline-none focus:ring-1 focus:ring-brand-black focus:border-brand-black transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-black text-white px-6 py-4 text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition rounded-sm mt-2">
+                            Request Appointment
+                        </button>
+                        <p class="text-xs text-center text-gray-500 mt-4">We will call you back to confirm your booking.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <footer class="bg-brand-black text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold tracking-tight text-white mb-6 uppercase tracking-widest">STUDIO</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                        A professional, clean, and welcoming hair salon in Dartford delivering structured pricing and consistent excellence.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider text-gray-200">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Our Services</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition text-sm">Pricing Structure</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition text-sm">Client Reviews</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider text-gray-200">Areas Served</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Proudly serving Dartford, Kent, and the surrounding areas with professional hairdressing services.
+                    </p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-sm bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-sm bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 STUDIO Hair Salon Dartford. All rights reserved.</p>
+                <!-- SEO Keywords hidden/subtle integration in footer bottom -->
+                <div class="mt-4 md:mt-0 space-x-2 text-gray-700">
+                    <span>Hairdresser Dartford</span> | 
+                    <span>Hair salon Dartford</span> | 
+                    <span>Affordable hairdresser Kent</span> | 
+                    <span>Professional hair salon UK</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close menu on link click
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

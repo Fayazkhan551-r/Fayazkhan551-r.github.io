@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annie's Cafe | Hot & Cold Food in Bloxwich, Walsall</title>
+    <meta name="description" content="Annie's Cafe serves fresh hot and cold food in Bloxwich. Dine-in, curbside pickup, or no-contact delivery. Famous for our hot breakfasts and friendly local service.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        cafe: {
+                            50: '#fcfaf8',
+                            100: '#f5f0eb',
+                            500: '#d97706', // Warm amber/orange
+                            600: '#b45309',
+                            900: '#451a03', // Deep espresso brown
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom utilities for soft shadows and smooth styling */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
+        }
+        .image-card-hover:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-cafe-50 antialiased selection:bg-cafe-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-heading font-bold text-2xl text-cafe-900 flex items-center gap-2">
+                        <i class="fa-solid fa-mug-hot text-cafe-500"></i>
+                        Annie's Cafe
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-cafe-600 font-medium transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-cafe-600 font-medium transition">About</a>
+                    <a href="#menu" class="text-gray-600 hover:text-cafe-600 font-medium transition">Menu</a>
+                    <a href="#reviews" class="text-gray-600 hover:text-cafe-600 font-medium transition">Reviews</a>
+                    <a href="#contact" class="text-gray-600 hover:text-cafe-600 font-medium transition">Contact</a>
+                    <a href="tel:+447777159278" class="bg-cafe-600 hover:bg-cafe-900 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg shadow-cafe-500/30">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-cafe-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full soft-shadow">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-cafe-50 hover:text-cafe-600 rounded-lg">Home</a>
+                <a href="#about" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-cafe-50 hover:text-cafe-600 rounded-lg">About</a>
+                <a href="#menu" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-cafe-50 hover:text-cafe-600 rounded-lg">Menu</a>
+                <a href="#reviews" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-cafe-50 hover:text-cafe-600 rounded-lg">Reviews</a>
+                <a href="#contact" class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:bg-cafe-50 hover:text-cafe-600 rounded-lg">Contact</a>
+                <div class="pt-2">
+                    <a href="tel:+447777159278" class="block w-full text-center bg-cafe-600 text-white px-5 py-3 rounded-xl font-medium shadow-md">
+                        Call to Order
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Split Layout for Perfect Image Visibility) -->
+    <section id="home" class="pt-28 pb-16 lg:pt-36 lg:pb-24 bg-cafe-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1 text-center lg:text-left space-y-6 lg:pr-8">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm mb-2 text-sm font-medium text-gray-700">
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        4.9 Google Rating (19 Reviews)
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-cafe-900 leading-tight">
+                        Fresh Hot & Cold Food in <span class="text-cafe-600">Bloxwich</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Your trusted local spot for excellent breakfasts, fresh daily meals, and friendly service. We offer dine-in, curbside pickup, and no-contact delivery to suit your day.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="tel:+447777159278" class="bg-cafe-600 hover:bg-cafe-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-cafe-500/30 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Call Now
+                        </a>
+                        <a href="#contact" class="bg-white border-2 border-cafe-600 text-cafe-600 hover:bg-cafe-50 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bag-shopping"></i> Order Online
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-center lg:justify-start gap-4 pt-6 text-sm text-gray-500 font-medium">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-500"></i> Dine-In</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-500"></i> Pickup</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-500"></i> Delivery</span>
+                    </div>
+                </div>
+
+                <!-- Image Content (Ensuring clear visibility as requested) -->
+                <div class="order-1 lg:order-2 relative w-full h-[350px] sm:h-[450px] lg:h-[550px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+                    <!-- Specific URL provided by user -->
+                    <img src="https://images.pexels.com/photos/31039340/pexels-photo-31039340.jpeg" 
+                         alt="Annie's Cafe Fresh Food" 
+                         class="w-full h-full object-cover object-center">
+                    
+                    <!-- Subtle inner shadow to frame the image nicely without obscuring food -->
+                    <div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.1)] rounded-3xl pointer-events-none"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Authority Strip -->
+    <section class="bg-white border-y border-gray-100 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 divide-x-0 md:divide-x divide-gray-100">
+                <div class="flex flex-col items-center text-center px-4 space-y-2">
+                    <i class="fa-brands fa-google text-2xl text-blue-500"></i>
+                    <h3 class="font-heading font-bold text-cafe-900">Rated 4.9 on Google</h3>
+                    <p class="text-sm text-gray-500">Trusted by Walsall locals</p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 space-y-2">
+                    <i class="fa-solid fa-utensils text-2xl text-cafe-500"></i>
+                    <h3 class="font-heading font-bold text-cafe-900">Fresh Food Daily</h3>
+                    <p class="text-sm text-gray-500">Cooked to order every time</p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 space-y-2">
+                    <i class="fa-solid fa-car text-2xl text-cafe-500"></i>
+                    <h3 class="font-heading font-bold text-cafe-900">3 Service Options</h3>
+                    <p class="text-sm text-gray-500">Pickup, Delivery & Dine-In</p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 space-y-2">
+                    <i class="fa-solid fa-face-smile text-2xl text-cafe-500"></i>
+                    <h3 class="font-heading font-bold text-cafe-900">Friendly Service</h3>
+                    <p class="text-sm text-gray-500">Warm local community feel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Cafe Experience -->
+    <section id="about" class="py-20 bg-cafe-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-cafe-600 font-semibold tracking-wider uppercase text-sm">Welcome to Annie's</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-cafe-900 leading-tight">
+                        Your Friendly Local Spot for Top Quality Cafe Food
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        At Annie’s Cafe, we believe in doing the simple things exceptionally well. We're a local favourite in Bloxwich known for serving up properly cooked, hot, and tasty food with a smile.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Whether you're stopping by for our famous hot breakfast, grabbing a quick freshly-made sandwich on your lunch break, or using our convenient curbside pickup, we guarantee fresh ingredients daily. We proudly source quality meat from local butchers to ensure every bite is spot on.
+                    </p>
+                    <ul class="space-y-3 pt-4">
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <i class="fa-solid fa-check-circle text-cafe-500 mt-1"></i>
+                            <span><strong>Quality Ingredients:</strong> Top quality butcher-sourced meats.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <i class="fa-solid fa-check-circle text-cafe-500 mt-1"></i>
+                            <span><strong>Fresh & Fast:</strong> Perfect for quick breakfast stops & takeaway lunches.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <i class="fa-solid fa-check-circle text-cafe-500 mt-1"></i>
+                            <span><strong>Warm Atmosphere:</strong> A small local gem with loyal repeat customers.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <!-- Placeholder blocks ready for real gallery images -->
+                    <div class="bg-gray-200 rounded-2xl h-48 md:h-64 object-cover overflow-hidden shadow-lg transform translate-y-8">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cafe ambiance" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-gray-200 rounded-2xl h-48 md:h-64 object-cover overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fresh Breakfast" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-cafe-600 font-semibold tracking-wider uppercase text-sm">Our Food</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-cafe-900">Menu Highlights</h2>
+                <p class="text-gray-600 text-lg">Fresh daily food at sensible prices. We serve up affordable cafe favourites cooked exactly how you like them.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Highlight 1 -->
+                <div class="bg-cafe-50 rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-cafe-600 text-2xl mb-4">
+                        <i class="fa-solid fa-egg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-cafe-900 mb-2">Full Breakfasts</h3>
+                    <p class="text-gray-600">Our excellent reputation is built on hearty, hot, and delicious traditional cooked breakfasts.</p>
+                </div>
+                <!-- Highlight 2 -->
+                <div class="bg-cafe-50 rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-cafe-600 text-2xl mb-4">
+                        <i class="fa-solid fa-bacon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-cafe-900 mb-2">Hot Sarnies</h3>
+                    <p class="text-gray-600">Bacon, sausage, and egg sandwiches loaded with quality butcher-sourced meats.</p>
+                </div>
+                <!-- Highlight 3 -->
+                <div class="bg-cafe-50 rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-cafe-600 text-2xl mb-4">
+                        <i class="fa-solid fa-burger"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-cafe-900 mb-2">Hot Sandwiches</h3>
+                    <p class="text-gray-600">Generous fillings, freshly prepared and served hot. The perfect lunchtime treat.</p>
+                </div>
+                <!-- Highlight 4 -->
+                <div class="bg-cafe-50 rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-cafe-600 text-2xl mb-4">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-cafe-900 mb-2">Cold Lunch Options</h3>
+                    <p class="text-gray-600">Crisp, fresh salads, cold sandwiches, and lighter bites prepared daily in our kitchen.</p>
+                </div>
+                <!-- Highlight 5 -->
+                <div class="bg-cafe-50 rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-cafe-600 text-2xl mb-4">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-cafe-900 mb-2">Daily Specials</h3>
+                    <p class="text-gray-600">Check our board! We regularly feature hearty, great value daily specials for our locals.</p>
+                </div>
+                <!-- Highlight 6 -->
+                <div class="bg-cafe-50 rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-cafe-600 text-2xl mb-4">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-cafe-900 mb-2">Hot Drinks</h3>
+                    <p class="text-gray-600">Fresh coffee, classic tea, and hot chocolates to perfectly accompany your food.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-flex items-center gap-2 text-cafe-600 font-semibold hover:text-cafe-900 transition">
+                    Want to order ahead for collection? Contact us <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section id="reviews" class="py-20 bg-cafe-900 text-white relative">
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What Bloxwich Locals Say</h2>
+                <p class="text-cafe-100 max-w-2xl mx-auto">We're proud to be highly recommended for our fresh food, reasonable prices, and friendly staff.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-cafe-50 italic mb-4">"Absolutely beautiful food, fresh daily, price is spot on and service is tip top."</p>
+                    <p class="font-semibold text-white">— Local Customer</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-cafe-50 italic mb-4">"Beautiful foods and top quality bought fresh daily from butchers meat."</p>
+                    <p class="font-semibold text-white">— Local Customer</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-cafe-50 italic mb-4">"Lovely and friendly, amazing quick service and very tasty top quality food."</p>
+                    <p class="font-semibold text-white">— Local Customer</p>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-cafe-50 italic mb-4">"Best cafe in Walsall, very friendly, food always hot and fresh."</p>
+                    <p class="font-semibold text-white">— Local Customer</p>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-cafe-50 italic mb-4">"Cheerful friendly staff and lovely tasty sarnie. Food arrives hot and properly cooked."</p>
+                    <p class="font-semibold text-white">— Local Customer</p>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-cafe-50 italic mb-4">"Great breakfast and a very reasonable price. A reliable spot for breakfast, lunch and takeaway."</p>
+                    <p class="font-semibold text-white">— Local Customer</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                 <a href="https://maps.app.goo.gl/8QTT6pBwMCxsgdVx9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white font-semibold hover:text-cafe-100 transition border-b border-white/30 pb-1">
+                    See All Google Reviews <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Services Section -->
+    <section class="py-20 bg-cafe-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12 items-center">
+                <div class="lg:col-span-1 space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-cafe-900 leading-tight">
+                        What Makes Us Different?
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        As a women-owned small local business, we put our heart into every meal. Here’s why Walsall locals keep coming back.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-cafe-100 flex items-center justify-center text-cafe-600"><i class="fa-solid fa-fire-burner"></i></div>
+                            <span class="font-medium text-gray-800">Food cooked fresh to order</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-cafe-100 flex items-center justify-center text-cafe-600"><i class="fa-solid fa-coins"></i></div>
+                            <span class="font-medium text-gray-800">Affordable, honest pricing</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-cafe-100 flex items-center justify-center text-cafe-600"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <span class="font-medium text-gray-800">Quick, friendly service</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-xl soft-shadow border border-gray-50 flex gap-4 items-start">
+                        <i class="fa-solid fa-shop text-2xl text-cafe-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Dine-In Area</h4>
+                            <p class="text-sm text-gray-600">A warm, welcoming space to sit down and enjoy your meal straight from the kitchen.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl soft-shadow border border-gray-50 flex gap-4 items-start">
+                        <i class="fa-solid fa-car-side text-2xl text-cafe-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Curbside Pickup</h4>
+                            <p class="text-sm text-gray-600">In a rush? Give us a call, place your order, and pick it up hot and ready to go.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl soft-shadow border border-gray-50 flex gap-4 items-start">
+                        <i class="fa-solid fa-box-open text-2xl text-cafe-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">No-Contact Delivery</h4>
+                            <p class="text-sm text-gray-600">Enjoy Annie's at home or work with our safe, no-contact delivery options.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl soft-shadow border border-gray-50 flex gap-4 items-start">
+                        <i class="fa-solid fa-star text-2xl text-cafe-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Local Hidden Gem</h4>
+                            <p class="text-sm text-gray-600">A proper community cafe built on strong repeat customers and great word-of-mouth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process / How to Order -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-cafe-900">How to Order</h2>
+                <p class="text-gray-600 mt-2">Getting your fresh food is simple and quick.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center relative">
+                    <div class="w-16 h-16 mx-auto bg-cafe-50 rounded-full flex items-center justify-center text-cafe-600 text-2xl mb-4 font-bold border-2 border-cafe-100 z-10 relative">1</div>
+                    <h4 class="font-bold text-gray-900 mb-2">Choose Food</h4>
+                    <p class="text-sm text-gray-500">Pick from our menu of fresh breakfasts & lunches</p>
+                    <!-- Connector Line (desktop) -->
+                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-cafe-100 z-0"></div>
+                </div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 mx-auto bg-cafe-50 rounded-full flex items-center justify-center text-cafe-600 text-2xl mb-4 font-bold border-2 border-cafe-100 z-10 relative">2</div>
+                    <h4 class="font-bold text-gray-900 mb-2">Call or Visit</h4>
+                    <p class="text-sm text-gray-500">Ring us to order ahead or pop in directly</p>
+                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-cafe-100 z-0"></div>
+                </div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 mx-auto bg-cafe-50 rounded-full flex items-center justify-center text-cafe-600 text-2xl mb-4 font-bold border-2 border-cafe-100 z-10 relative">3</div>
+                    <h4 class="font-bold text-gray-900 mb-2">Select Service</h4>
+                    <p class="text-sm text-gray-500">Pick Up, Dine In, or request Delivery</p>
+                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-cafe-100 z-0"></div>
+                </div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 mx-auto bg-cafe-50 rounded-full flex items-center justify-center text-cafe-600 text-2xl mb-4 font-bold border-2 border-cafe-100 z-10 relative">4</div>
+                    <h4 class="font-bold text-gray-900 mb-2">Enjoy</h4>
+                    <p class="text-sm text-gray-500">Enjoy top-quality, hot, local cafe food</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Placeholder Section -->
+    <section class="py-16 bg-cafe-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-heading font-bold text-cafe-900 mb-2">Fresh from the Kitchen</h2>
+                <p class="text-gray-600">A glimpse of what we serve up daily.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-sm image-card-hover group">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hot coffee" class="w-full h-full object-cover transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium">Fresh Coffee</span>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-sm image-card-hover group">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fresh Sandwich" class="w-full h-full object-cover transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium">Hot Sarnies</span>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-sm image-card-hover group sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cooked Breakfast" class="w-full h-full object-cover transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium">Full English</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strong CTA Section -->
+    <section class="py-20 bg-cafe-600 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-cafe-500 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-cafe-900 rounded-full blur-3xl opacity-30"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+                Looking for fresh breakfast or hot food in Bloxwich without paying over the odds?
+            </h2>
+            <p class="text-cafe-50 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Join our regulars. Whether you're dining in or taking away, we guarantee friendly service and top-quality ingredients.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+447777159278" class="bg-white text-cafe-900 hover:bg-cafe-50 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
+                    <i class="fa-solid fa-phone mr-2"></i> Call Now
+                </a>
+                <a href="#contact" class="bg-cafe-900 text-white hover:bg-black px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-3xl font-heading font-bold text-cafe-900 mb-6">Visit or Order</h2>
+                    <p class="text-gray-600 mb-8">Ready for some fresh cafe food? Give us a ring to place a curbside pickup order, arrange delivery, or just pop down to see us.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cafe-50 rounded-xl flex items-center justify-center text-cafe-600 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Location</h4>
+                                <p class="text-gray-600 mt-1">Unit 3, 4 Leamore Ln<br>Bloxwich, Walsall<br>WS2 7DE, United Kingdom</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cafe-50 rounded-xl flex items-center justify-center text-cafe-600 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phone</h4>
+                                <p class="text-gray-600 mt-1">
+                                    <a href="tel:+447777159278" class="hover:text-cafe-600 transition font-medium text-lg">+44 7777 159278</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cafe-50 rounded-xl flex items-center justify-center text-cafe-600 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Hours</h4>
+                                <p class="text-gray-600 mt-1 font-medium text-cafe-600">Closes 2 PM Daily</p>
+                                <p class="text-sm text-gray-500">Perfect for breakfast and lunch!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-cafe-50 p-8 rounded-2xl border border-gray-100 soft-shadow">
+                    <h3 class="text-2xl font-bold font-heading text-gray-900 mb-6">Send an Enquiry / Order Request</h3>
+                    <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for your enquiry. We will get back to you shortly!');">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 outline-none transition">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 outline-none transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="type" class="block text-sm font-medium text-gray-700 mb-1">Booking or Order Type</label>
+                            <select id="type" name="type" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 outline-none transition bg-white">
+                                <option>Curbside Pickup Order</option>
+                                <option>Delivery Enquiry</option>
+                                <option>Dine-in Question</option>
+                                <option>General Enquiry</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message / Order Details</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cafe-500 focus:border-cafe-500 outline-none transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-cafe-900 text-white font-bold py-4 rounded-xl hover:bg-black transition-colors shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 items-center md:items-start text-center md:text-left">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="font-heading font-bold text-2xl text-white flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <i class="fa-solid fa-mug-hot text-cafe-500"></i>
+                        Annie's Cafe
+                    </a>
+                    <p class="text-sm text-gray-400 max-w-xs mx-auto md:mx-0">
+                        Serving up fresh hot and cold food in Bloxwich. Quality butcher-sourced meat and a warm welcome guaranteed.
+                    </p>
+                </div>
+
+                <!-- SEO Keywords / Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Local Food & Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Cafe Bloxwich</li>
+                        <li>Breakfast Cafe Walsall</li>
+                        <li>Hot and Cold Food Bloxwich</li>
+                        <li>Takeaway Cafe Walsall</li>
+                        <li>Fresh Breakfast Bloxwich</li>
+                    </ul>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#menu" class="hover:text-white transition">Menu</a></li>
+                        <li><a href="https://maps.app.goo.gl/8QTT6pBwMCxsgdVx9" target="_blank" class="hover:text-white transition">Verify Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p>&copy; 2026 Annie's Cafe. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <span>Unit 3, 4 Leamore Ln, Bloxwich</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle menu
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar blur effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.replace('border-gray-100', 'border-transparent');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.classList.replace('border-transparent', 'border-gray-100');
+            }
+        });
+    </script>
+</body>
+</html>

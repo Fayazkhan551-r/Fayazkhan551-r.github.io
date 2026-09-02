@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunafa Tea | Authentic Damascene Food & Desserts in Bradford</title>
+    <meta name="description" content="Kunafa Tea is an airy cafe and restaurant in Bradford furnishing traditional Syrian small plates, mains, and famous desserts in a casual environment.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#2A2525',    // Dark Charcoal / Brownish Black
+                            light: '#FAF8F5',   // Warm Cream
+                            primary: '#B56566', // Dusty Rose / Terracotta (from logo)
+                            secondary: '#D4AF37', // Gold
+                            accent: '#8C6262'   // Muted Rose
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        body {
+            background-color: #FAF8F5;
+            color: #2A2525;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(181, 101, 102, 0.2);
+        }
+        /* Mobile menu transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="bg-brand-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Text Logo mimicking branding -->
+                    <div class="w-10 h-10 rounded-full border-2 border-brand-primary flex items-center justify-center bg-brand-light text-brand-primary font-serif font-bold italic text-xl leading-none">
+                        Kt
+                    </div>
+                    <a href="#" class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-white">
+                        Kunafa <span class="text-brand-primary">Tea</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-gray-300 hover:text-brand-primary transition-colors font-medium">Home</a>
+                    <a href="#menu" class="text-gray-300 hover:text-brand-primary transition-colors font-medium">Menu</a>
+                    <a href="#about" class="text-gray-300 hover:text-brand-primary transition-colors font-medium">About</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-brand-primary transition-colors font-medium">Reviews</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-primary transition-colors font-medium">Contact</a>
+                    <a href="#contact" class="bg-brand-primary hover:bg-rose-800 text-white px-6 py-2.5 rounded-full font-bold transition-colors shadow-md">
+                        Order Now
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-brand-dark border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-primary">Home</a>
+                <a href="#menu" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-primary">Menu</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-primary">About</a>
+                <a href="#reviews" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-primary">Reviews</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-primary">Contact</a>
+                <a href="#contact" class="block text-center mt-4 bg-brand-primary hover:bg-rose-800 text-white px-6 py-3 rounded-full font-bold transition-colors">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Stacked Mobile, Split Desktop to prevent overlap) -->
+    <section class="bg-brand-dark overflow-hidden flex flex-col lg:flex-row border-b-4 border-brand-primary">
+        <!-- Text Content -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-12 z-10 order-2 lg:order-1 relative">
+            <!-- Subtle background pattern overlay -->
+            <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M20 20.5V18H0v-2h20v-2.5L22.5 16 25 13.5V0h2v13.5L29.5 16 32 13.5V0h2v13.5l2.5 2.5L39 13.5V0h1v15.5L38.5 17l-1.5 1.5H40v2h-3l-1.5-1.5L34 17.5V40h-2V17.5l-2.5-2.5L27 17.5V40h-2V17.5l-2.5-2.5L20 17.5V40h-2V20.5h2z\' fill=\'%23ffffff\' fill-rule=\'evenodd\'/%3E%3C/svg%3E')]"></div>
+            
+            <div class="sm:text-center lg:text-left text-white w-full max-w-xl relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/20 border border-brand-primary/40 text-sm font-medium mb-6 text-brand-light shadow-sm">
+                    <span class="text-brand-secondary"><i class="fas fa-star"></i> 4.7 Google Rating</span>
+                    <span class="text-white/50">|</span>
+                    <span>1,360+ Reviews</span>
+                </div>
+                
+                <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl font-serif leading-tight">
+                    Authentic Damascene <br/>
+                    <span class="text-brand-primary">Food & Desserts</span>
+                </h1>
+                
+                <p class="mt-4 text-base text-gray-300 sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
+                    An airy cafe and restaurant in Bradford furnishing traditional Syrian small plates, rich mains, and our famous signature Kunafa in a warm, welcoming environment.
+                </p>
+                
+                <div class="mt-6 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4 text-sm font-medium text-gray-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-utensils text-brand-primary"></i> Dine-In & Takeout</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-motorcycle text-brand-primary"></i> Delivery Available</div>
+                </div>
+
+                <div class="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
+                    <div class="rounded-full shadow w-full sm:w-auto">
+                        <a href="#menu" class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-brand-primary hover:bg-rose-800 md:py-4 md:text-lg transition-colors">
+                            View Menu
+                        </a>
+                    </div>
+                    <div class="mt-3 sm:mt-0 rounded-full shadow w-full sm:w-auto">
+                        <a href="tel:+447368213111" class="w-full flex items-center justify-center px-8 py-4 border-2 border-white/20 text-base font-bold rounded-full text-white bg-transparent hover:bg-white/10 md:py-4 md:text-lg transition-colors">
+                            <i class="fas fa-phone-alt mr-2"></i> Call to Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Image Content (Ensures clear visibility, no overlap) -->
+        <div class="w-full lg:w-1/2 h-[400px] sm:h-[500px] lg:h-auto order-1 lg:order-2">
+            <img class="w-full h-full object-cover object-center" 
+                 src="data:image/jpeg;base64,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" 
+                 alt="Beautiful buffet setup at Kunafa Tea">
+        </div>
+    </section>
+
+    <!-- Trust / Authority Strip -->
+    <div class="bg-brand-primary text-white py-6 shadow-md relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-rose-800/50">
+                <div class="flex flex-col items-center justify-center px-2">
+                    <i class="fab fa-google text-2xl mb-2 text-brand-secondary"></i>
+                    <span class="font-bold text-sm sm:text-base">Rated 4.7 on Google</span>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2">
+                    <i class="fas fa-heart text-2xl mb-2 text-brand-secondary"></i>
+                    <span class="font-bold text-sm sm:text-base">Authentic Syrian Cuisine</span>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2">
+                    <i class="fas fa-shopping-bag text-2xl mb-2 text-brand-secondary"></i>
+                    <span class="font-bold text-sm sm:text-base">Dine-In, Takeout & Delivery</span>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2">
+                    <i class="fas fa-star text-2xl mb-2 text-brand-secondary"></i>
+                    <span class="font-bold text-sm sm:text-base">1,300+ Happy Reviews</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1542314831-c5a42b1f158f?auto=format&fit=crop&q=80&w=800" alt="Authentic Middle Eastern Mezze" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 border-4 border-brand-primary/20 rounded-2xl pointer-events-none"></div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-base text-brand-primary font-bold tracking-wide uppercase">Welcome to Kunafa Tea</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
+                        A Taste of Damascus in Bradford
+                    </p>
+                    <p class="mt-6 text-lg text-gray-700 leading-relaxed">
+                        Located inside Ultimate Fireworks on Thornton Road, Kunafa Tea is your local gateway to the rich, vibrant flavors of the Middle East. We specialize in authentic Damascene food, crafting everything from comforting small plates to satisfying mains.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                        Beyond our savoury dishes like grilled kibbeh and fresh tabbouleh, we are renowned for our traditional desserts. Whether you are craving the sweet, warm cheese of our signature Kunafa or the rich crunch of creamy baklava, our airy and casual environment is the perfect place to enjoy it.
+                    </p>
+                    <div class="mt-8">
+                        <a href="#reviews" class="text-brand-primary hover:text-brand-dark font-bold text-lg flex items-center transition-colors">
+                            See what our guests say <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base text-brand-primary font-bold tracking-wide uppercase">Our Experience</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
+                    Savoury, Sweet & Everything In Between
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-light rounded-2xl p-8 border border-rose-50 card-hover">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-pizza-slice text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Famous Kunafa</h3>
+                    <p class="text-gray-600">The dessert we are named after. Warm, sweet, and perfectly crafted to traditional recipes.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-brand-light rounded-2xl p-8 border border-rose-50 card-hover">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-utensils text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Savoury Damascene Food</h3>
+                    <p class="text-gray-600">Explore authentic flavors with our grilled kibbeh, succulent fajitas, and hearty kebab wraps.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-brand-light rounded-2xl p-8 border border-rose-50 card-hover">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Fresh Salads & Mezze</h3>
+                    <p class="text-gray-600">Brighten your meal with fresh Tabbouleh, Fattoush, and rich Mohammara dips.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-brand-light rounded-2xl p-8 border border-rose-50 card-hover">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chair text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Casual Dine-In</h3>
+                    <p class="text-gray-600">Relax in our airy, beautifully decorated restaurant with friendly staff to welcome you.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-brand-light rounded-2xl p-8 border border-rose-50 card-hover">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-box-open text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Takeout & Delivery</h3>
+                    <p class="text-gray-600">Enjoy Kunafa Tea at home. We offer quick takeout and convenient UberEats delivery.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-brand-light rounded-2xl p-8 border border-rose-50 card-hover">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-glass-cheers text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Special Buffets</h3>
+                    <p class="text-gray-600">Look out for our special buffet events (like our popular Ramadan Iftar) featuring a massive variety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlight Section -->
+    <section id="menu" class="py-20 bg-brand-dark text-white border-y-4 border-brand-primary">
+        <!-- Arabesque pattern overlay -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-secondary font-bold tracking-wide uppercase">Menu Highlights</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl font-serif">
+                    Highly Recommended Dishes
+                </p>
+                <p class="mt-4 text-lg text-gray-300">
+                    A taste of what makes us special. Average spend <span class="font-bold text-brand-secondary">£10–£20 per person</span>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Savoury Block -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 shadow-xl">
+                    <h3 class="text-2xl font-serif font-bold text-brand-primary border-b border-brand-primary/30 pb-4 mb-6">Savoury Dishes & Salads</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Grilled Kibbeh</h4>
+                                <p class="text-sm text-gray-400 mt-1">A unique, must-try menu item. Customers crave every single bite.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Authentic Chicken Fajita</h4>
+                                <p class="text-sm text-gray-400 mt-1">Juicy, well-seasoned, perfectly cooked and served hot.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Kebab Wraps & Shawarma</h4>
+                                <p class="text-sm text-gray-400 mt-1">Classic, comforting Middle Eastern wraps packed with flavour.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Tabbouleh & Fattoush</h4>
+                                <p class="text-sm text-gray-400 mt-1">Fresh, healthy, and zesty salads that perfectly balance the rich mains.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sweet Block -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 shadow-xl">
+                    <h3 class="text-2xl font-serif font-bold text-brand-primary border-b border-brand-primary/30 pb-4 mb-6">Traditional Desserts & Drinks</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Signature Kunafa</h4>
+                                <p class="text-sm text-gray-400 mt-1">Our own take on kunafa, inspired by traditional flavours with a unique twist.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Creamy Baklava</h4>
+                                <p class="text-sm text-gray-400 mt-1">The perfect sweet treat to end your meal, rich and perfectly textured.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Green Mint Lemon & Lime</h4>
+                                <p class="text-sm text-gray-400 mt-1">A highly recommended drink for a great, zingy refresher.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold">Authentic Tea</h4>
+                                <p class="text-sm text-gray-400 mt-1">Warm, fragrant tea to compliment your dessert experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-brand-primary hover:bg-rose-800 text-white px-8 py-3 rounded-full font-bold transition-colors shadow-md">
+                    Call for Delivery or Pickup
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section id="reviews" class="py-20 bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Top Verification Banner -->
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center justify-center p-1 bg-white rounded-full border border-gray-200 mb-6 shadow-sm">
+                    <span class="bg-brand-light rounded-full px-4 py-2 flex items-center gap-2 font-bold text-brand-dark">
+                        <i class="fab fa-google text-blue-500"></i> Rated 4.7 on Google
+                    </span>
+                    <a href="https://maps.app.goo.gl/Z8B9c57Bdp5jGhNs8" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-sm font-bold text-brand-primary hover:text-rose-800 transition-colors">
+                        Verify Reviews <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <h2 class="text-3xl font-extrabold font-serif text-brand-dark sm:text-4xl">
+                    Loved by Bradford
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    With over 1,360 reviews, discover why locals consider us a top destination for authentic Syrian flavours.
+                </p>
+            </div>
+
+            <!-- Review Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-rose-50 flex flex-col">
+                    <div class="flex text-brand-secondary mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 flex-grow">"Such a lovely experience! The food was full of authentic Syrian flavors and tasted amazing. The fajita was juicy and well-seasoned, and the creamy baklava was the perfect sweet treat. The staff were so kind and welcoming."</p>
+                    <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">F</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">Faten Kadloua</p>
+                            <p class="text-xs text-gray-500">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-rose-50 flex flex-col">
+                    <div class="flex text-brand-secondary mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 flex-grow">"I just ordered from uber eats, grilled kibbeh, tabbouleh and kebab wrap and I just wanna say WOW, I was craving the kibbeh so much and enjoyed every single bite of it, it is so nice to see these unique dishes in the menu."</p>
+                    <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">R</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">Rama Makki</p>
+                            <p class="text-xs text-gray-500">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-rose-50 flex flex-col">
+                    <div class="flex text-brand-secondary mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 flex-grow">"Good portion sizes, fresh tasty food. Prices also reasonable. Amazing food, honestly. You shouldn't think twice about coming here. Everything is full of flavour."</p>
+                    <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">Z</div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark">Zainab Aqeel</p>
+                            <p class="text-xs text-gray-500">Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                 <a href="https://maps.app.goo.gl/Z8B9c57Bdp5jGhNs8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-brand-primary shadow-sm text-base font-medium rounded-md text-brand-primary bg-white hover:bg-brand-primary hover:text-white transition-colors">
+                    Read More on Google Maps
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-brand-primary font-bold tracking-wide uppercase">From Our Kitchen</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
+                    Vibrant, Fresh, Authentic
+                </p>
+            </div>
+
+            <!-- 6-Image Permanent Gallery Grid using Unsplash Middle Eastern Food -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                <!-- Kebabs / Mixed Grill -->
+                <div class="overflow-hidden rounded-xl shadow-md aspect-square group bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600" alt="Authentic Kebab Grill" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <!-- Mezze / Hummus -->
+                <div class="overflow-hidden rounded-xl shadow-md aspect-square group bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1542314831-c5a42b1f158f?auto=format&fit=crop&q=80&w=600" alt="Fresh Hummus and Mezze" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <!-- Shawarma -->
+                <div class="overflow-hidden rounded-xl shadow-md aspect-square group bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&q=80&w=600" alt="Shawarma Wrap" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <!-- Tabbouleh/Salad -->
+                <div class="overflow-hidden rounded-xl shadow-md aspect-square group bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=600" alt="Fresh Salad" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <!-- Dessert / Baklava -->
+                <div class="overflow-hidden rounded-xl shadow-md aspect-square group bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1595908129746-57622662e775?auto=format&fit=crop&q=80&w=600" alt="Middle Eastern Desserts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <!-- Mixed platter -->
+                <div class="overflow-hidden rounded-xl shadow-md aspect-square group bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&q=80&w=600" alt="Damascene Food Platter" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strong CTA Section -->
+    <section class="py-20 bg-brand-primary relative overflow-hidden">
+        <!-- Abstract shapes -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white opacity-10"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-black opacity-10"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl font-extrabold font-serif text-white sm:text-5xl leading-tight mb-6">
+                Craving authentic Syrian flavours tonight?
+            </h2>
+            <p class="text-xl text-rose-100 mb-10">
+                Visit us on Thornton Rd for a casual dine-in experience, or call us directly to place a collection order.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+447368213111" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-full text-brand-primary bg-white hover:bg-gray-100 transition-colors shadow-lg hover:-translate-y-1 transform duration-200">
+                    <i class="fas fa-phone-alt mr-2"></i> Call: +44 7368 213111
+                </a>
+                <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-bold rounded-full text-white bg-transparent hover:bg-white/10 transition-colors">
+                    Find Location
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    
+                    <!-- Contact Info -->
+                    <div class="bg-brand-dark text-white p-10 md:p-16 relative">
+                        <!-- Decorative overlay -->
+                        <div class="absolute top-0 right-0 p-8 opacity-10 text-brand-primary">
+                            <i class="fas fa-leaf text-8xl"></i>
+                        </div>
+                        
+                        <h3 class="text-3xl font-serif font-bold mb-8 relative z-10">Visit Kunafa Tea</h3>
+                        
+                        <div class="space-y-8 relative z-10">
+                            <div class="flex items-start">
+                                <div class="mt-1 bg-brand-primary/20 p-3 rounded-full text-brand-primary">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-400 uppercase font-bold tracking-wider">Location</p>
+                                    <p class="text-lg font-medium mt-1">150 Thornton Rd, Bradford<br>BD1 2JH, United Kingdom<br><span class="text-sm text-brand-primary mt-1 block">Located in: Ultimate Fireworks</span></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="mt-1 bg-brand-primary/20 p-3 rounded-full text-brand-primary">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-400 uppercase font-bold tracking-wider">Opening Hours</p>
+                                    <p class="text-lg font-medium mt-1">Opens at 12:00 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="mt-1 bg-brand-primary/20 p-3 rounded-full text-brand-primary">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-400 uppercase font-bold tracking-wider">Phone & Email</p>
+                                    <p class="text-lg font-medium mt-1 hover:text-brand-primary transition-colors"><a href="tel:+447368213111">+44 7368 213111</a></p>
+                                    <p class="text-base text-gray-300 mt-1">kunafatea.cafe@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map/Visual space -->
+                    <div class="bg-gray-100 relative min-h-[300px] lg:min-h-full">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-10 text-center bg-white border-l border-gray-100">
+                            <div class="w-20 h-20 bg-brand-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-map-marked-alt text-4xl text-brand-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Find us in Bradford</h3>
+                            <p class="text-gray-500 mb-6">Experience authentic Damascene food today.</p>
+                            <a href="https://maps.app.goo.gl/Z8B9c57Bdp5jGhNs8" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border-2 border-brand-primary text-brand-primary font-bold rounded-full hover:bg-brand-primary hover:text-white transition-colors shadow-sm">
+                                Open Google Maps
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-gray-800 py-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center md:items-start">
+                
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-white">
+                        Kunafa <span class="text-brand-primary">Tea</span>
+                    </span>
+                    <p class="mt-4 text-sm text-gray-400">
+                        An airy outfit furnishing traditional Syrian small plates, mains, and famous desserts in a casual environment in Bradford.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Home</a></li>
+                        <li><a href="#menu" class="hover:text-brand-primary transition-colors">Menu Highlights</a></li>
+                        <li><a href="#about" class="hover:text-brand-primary transition-colors">About Us</a></li>
+                        <li><a href="#reviews" class="hover:text-brand-primary transition-colors">Customer Reviews</a></li>
+                    </ul>
+                </div>
+                
+                <div class="text-center md:text-right text-xs text-gray-500 space-y-2 leading-relaxed">
+                    <p class="font-semibold text-gray-400 uppercase tracking-wide mb-2">Service Areas</p>
+                    <p>Middle Eastern Restaurant Bradford</p>
+                    <p>Authentic Damascene Food UK</p>
+                    <p>Syrian Restaurant Thornton Rd</p>
+                    <p>Best Kunafa Bradford</p>
+                    <p>Dine-in, Takeout & Delivery</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; <span id="year"></span> Kunafa Tea Restaurant. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-6 flex justify-center">
+                    <a href="https://maps.app.goo.gl/Z8B9c57Bdp5jGhNs8" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="Google Maps"><i class="fab fa-google text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><i class="fab fa-tiktok text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            if (menu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
