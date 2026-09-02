@@ -1,95 +1,508 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fayaz Khan | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fayaz Khan — Web Developer &amp; AI Marketing Strategist</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:initial;--tw-backdrop-hue-rotate:initial;--tw-backdrop-invert:initial;--tw-backdrop-opacity:initial;--tw-backdrop-saturate:initial;--tw-backdrop-sepia:initial;--tw-ease:initial}}}@layer theme{:root,:host{--font-sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--color-orange-300:oklch(83.7% .128 66.29);--color-orange-400:oklch(75% .183 55.934);--color-teal-300:oklch(85.5% .138 181.071);--color-teal-400:oklch(77.7% .152 181.912);--color-sky-200:oklch(90.1% .058 230.902);--color-sky-300:oklch(82.8% .111 230.318);--color-sky-400:oklch(74.6% .16 232.661);--color-sky-600:oklch(58.8% .158 241.966);--color-indigo-300:oklch(78.5% .115 274.713);--color-indigo-400:oklch(67.3% .182 276.935);--color-indigo-500:oklch(58.5% .233 277.117);--color-indigo-600:oklch(51.1% .262 276.966);--color-purple-300:oklch(82.7% .119 306.383);--color-purple-400:oklch(71.4% .203 305.504);--color-pink-300:oklch(82.3% .12 346.018);--color-pink-400:oklch(71.8% .202 349.761);--color-rose-300:oklch(81% .117 11.638);--color-rose-400:oklch(71.2% .194 13.428);--color-slate-100:oklch(96.8% .007 247.896);--color-slate-200:oklch(92.9% .013 255.508);--color-slate-300:oklch(86.9% .022 252.894);--color-slate-400:oklch(70.4% .04 256.788);--color-slate-500:oklch(55.4% .046 257.417);--color-slate-600:oklch(44.6% .043 257.281);--color-white:#fff;--spacing:.25rem;--container-lg:32rem;--container-xl:36rem;--container-2xl:42rem;--container-4xl:56rem;--container-6xl:72rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2 / 1.5);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-6xl:3.75rem;--text-6xl--line-height:1;--text-7xl:4.5rem;--text-7xl--line-height:1;--font-weight-normal:400;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--tracking-tight:-.025em;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--radius-2xl:1rem;--ease-in-out:cubic-bezier(.4, 0, .2, 1);--blur-md:12px;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring:where(:not(iframe)){outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab, currentcolor 50%, transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-x-0{inset-inline:0}.top-0{top:0}.top-\[-30\%\]{top:-30%}.right-\[-15\%\]{right:-15%}.bottom-8{bottom:calc(var(--spacing) * 8)}.bottom-\[-25\%\]{bottom:-25%}.left-1\/2{left:50%}.left-\[-15\%\]{left:-15%}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-inline:auto}.mt-8{margin-top:calc(var(--spacing) * 8)}.mb-1{margin-bottom:var(--spacing)}.mb-2{margin-bottom:calc(var(--spacing) * 2)}.mb-3{margin-bottom:calc(var(--spacing) * 3)}.mb-4{margin-bottom:calc(var(--spacing) * 4)}.mb-5{margin-bottom:calc(var(--spacing) * 5)}.mb-6{margin-bottom:calc(var(--spacing) * 6)}.mb-7{margin-bottom:calc(var(--spacing) * 7)}.mb-8{margin-bottom:calc(var(--spacing) * 8)}.mb-9{margin-bottom:calc(var(--spacing) * 9)}.mb-10{margin-bottom:calc(var(--spacing) * 10)}.mb-12{margin-bottom:calc(var(--spacing) * 12)}.flex{display:flex}.grid{display:grid}.hidden{display:none}.inline-flex{display:inline-flex}.h-8{height:calc(var(--spacing) * 8)}.h-9{height:calc(var(--spacing) * 9)}.h-10{height:calc(var(--spacing) * 10)}.h-11{height:calc(var(--spacing) * 11)}.h-16{height:calc(var(--spacing) * 16)}.h-28{height:calc(var(--spacing) * 28)}.h-\[28rem\]{height:28rem}.h-full{height:100%}.min-h-\[92vh\]{min-height:92vh}.w-8{width:calc(var(--spacing) * 8)}.w-9{width:calc(var(--spacing) * 9)}.w-10{width:calc(var(--spacing) * 10)}.w-11{width:calc(var(--spacing) * 11)}.w-28{width:calc(var(--spacing) * 28)}.w-\[28rem\]{width:28rem}.w-full{width:100%}.max-w-2xl{max-width:var(--container-2xl)}.max-w-4xl{max-width:var(--container-4xl)}.max-w-6xl{max-width:var(--container-6xl)}.max-w-lg{max-width:var(--container-lg)}.max-w-xl{max-width:var(--container-xl)}.flex-1{flex:1}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:calc(calc(1 / 2 * 100%) * -1);translate:var(--tw-translate-x) var(--tw-translate-y)}.transform{transform:var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-1{gap:var(--spacing)}.gap-1\.5{gap:calc(var(--spacing) * 1.5)}.gap-2{gap:calc(var(--spacing) * 2)}.gap-2\.5{gap:calc(var(--spacing) * 2.5)}.gap-3{gap:calc(var(--spacing) * 3)}.gap-5{gap:calc(var(--spacing) * 5)}.gap-6{gap:calc(var(--spacing) * 6)}.gap-8{gap:calc(var(--spacing) * 8)}:where(.space-y-2>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));margin-block-end:calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)))}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded-2xl{border-radius:var(--radius-2xl)}.rounded-full{border-radius:3.40282e38px}.rounded-lg{border-radius:var(--radius-lg)}.rounded-md{border-radius:var(--radius-md)}.rounded-xl{border-radius:var(--radius-xl)}.border{border-style:var(--tw-border-style);border-width:1px}.border-2{border-style:var(--tw-border-style);border-width:2px}.border-y{border-block-style:var(--tw-border-style);border-block-width:1px}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px}.border-l-2{border-left-style:var(--tw-border-style);border-left-width:2px}.border-sky-400\/40{border-color:#00bcfe66}@supports (color:color-mix(in lab, red, red)){.border-sky-400\/40{border-color:color-mix(in oklab, var(--color-sky-400) 40%, transparent)}}.border-white\/5{border-color:#ffffff0d}@supports (color:color-mix(in lab, red, red)){.border-white\/5{border-color:color-mix(in oklab, var(--color-white) 5%, transparent)}}.border-l-indigo-400\/60{border-left-color:#7d87ff99}@supports (color:color-mix(in lab, red, red)){.border-l-indigo-400\/60{border-left-color:color-mix(in oklab, var(--color-indigo-400) 60%, transparent)}}.border-l-orange-400\/60{border-left-color:#ff8b1a99}@supports (color:color-mix(in lab, red, red)){.border-l-orange-400\/60{border-left-color:color-mix(in oklab, var(--color-orange-400) 60%, transparent)}}.border-l-pink-400\/60{border-left-color:#fb64b699}@supports (color:color-mix(in lab, red, red)){.border-l-pink-400\/60{border-left-color:color-mix(in oklab, var(--color-pink-400) 60%, transparent)}}.border-l-purple-400\/60{border-left-color:#c07eff99}@supports (color:color-mix(in lab, red, red)){.border-l-purple-400\/60{border-left-color:color-mix(in oklab, var(--color-purple-400) 60%, transparent)}}.border-l-rose-400\/60{border-left-color:#ff667f99}@supports (color:color-mix(in lab, red, red)){.border-l-rose-400\/60{border-left-color:color-mix(in oklab, var(--color-rose-400) 60%, transparent)}}.border-l-sky-400\/60{border-left-color:#00bcfe99}@supports (color:color-mix(in lab, red, red)){.border-l-sky-400\/60{border-left-color:color-mix(in oklab, var(--color-sky-400) 60%, transparent)}}.border-l-teal-400\/60{border-left-color:#00d3bd99}@supports (color:color-mix(in lab, red, red)){.border-l-teal-400\/60{border-left-color:color-mix(in oklab, var(--color-teal-400) 60%, transparent)}}.bg-\[\#05070d\]\/70{background-color:oklab(12.9007% -.000946336 -.0149496/.7)}.bg-indigo-400\/10{background-color:#7d87ff1a}@supports (color:color-mix(in lab, red, red)){.bg-indigo-400\/10{background-color:color-mix(in oklab, var(--color-indigo-400) 10%, transparent)}}.bg-indigo-600{background-color:var(--color-indigo-600)}.bg-orange-400\/10{background-color:#ff8b1a1a}@supports (color:color-mix(in lab, red, red)){.bg-orange-400\/10{background-color:color-mix(in oklab, var(--color-orange-400) 10%, transparent)}}.bg-pink-400\/10{background-color:#fb64b61a}@supports (color:color-mix(in lab, red, red)){.bg-pink-400\/10{background-color:color-mix(in oklab, var(--color-pink-400) 10%, transparent)}}.bg-purple-400\/10{background-color:#c07eff1a}@supports (color:color-mix(in lab, red, red)){.bg-purple-400\/10{background-color:color-mix(in oklab, var(--color-purple-400) 10%, transparent)}}.bg-rose-400\/10{background-color:#ff667f1a}@supports (color:color-mix(in lab, red, red)){.bg-rose-400\/10{background-color:color-mix(in oklab, var(--color-rose-400) 10%, transparent)}}.bg-sky-400{background-color:var(--color-sky-400)}.bg-sky-400\/10{background-color:#00bcfe1a}@supports (color:color-mix(in lab, red, red)){.bg-sky-400\/10{background-color:color-mix(in oklab, var(--color-sky-400) 10%, transparent)}}.bg-sky-600{background-color:var(--color-sky-600)}.bg-slate-400\/10{background-color:#90a1b91a}@supports (color:color-mix(in lab, red, red)){.bg-slate-400\/10{background-color:color-mix(in oklab, var(--color-slate-400) 10%, transparent)}}.bg-teal-400\/10{background-color:#00d3bd1a}@supports (color:color-mix(in lab, red, red)){.bg-teal-400\/10{background-color:color-mix(in oklab, var(--color-teal-400) 10%, transparent)}}.bg-white{background-color:var(--color-white)}.bg-white\/5{background-color:#ffffff0d}@supports (color:color-mix(in lab, red, red)){.bg-white\/5{background-color:color-mix(in oklab, var(--color-white) 5%, transparent)}}.bg-gradient-to-br{--tw-gradient-position:to bottom right in oklab;background-image:linear-gradient(var(--tw-gradient-stops))}.from-sky-400{--tw-gradient-from:var(--color-sky-400);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))}.to-indigo-500{--tw-gradient-to:var(--color-indigo-500);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))}.object-cover{object-fit:cover}.p-5{padding:calc(var(--spacing) * 5)}.p-6{padding:calc(var(--spacing) * 6)}.p-7{padding:calc(var(--spacing) * 7)}.p-8{padding:calc(var(--spacing) * 8)}.px-3{padding-inline:calc(var(--spacing) * 3)}.px-4{padding-inline:calc(var(--spacing) * 4)}.px-5{padding-inline:calc(var(--spacing) * 5)}.px-6{padding-inline:calc(var(--spacing) * 6)}.py-1\.5{padding-block:calc(var(--spacing) * 1.5)}.py-2{padding-block:calc(var(--spacing) * 2)}.py-2\.5{padding-block:calc(var(--spacing) * 2.5)}.py-3{padding-block:calc(var(--spacing) * 3)}.py-4{padding-block:calc(var(--spacing) * 4)}.py-14{padding-block:calc(var(--spacing) * 14)}.py-16{padding-block:calc(var(--spacing) * 16)}.py-20{padding-block:calc(var(--spacing) * 20)}.pt-16{padding-top:calc(var(--spacing) * 16)}.text-center{text-align:center}.text-2xl{font-size:var(--text-2xl);line-height:var(--tw-leading,var(--text-2xl--line-height))}.text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading,var(--text-3xl--line-height))}.text-4xl{font-size:var(--text-4xl);line-height:var(--tw-leading,var(--text-4xl--line-height))}.text-base{font-size:var(--text-base);line-height:var(--tw-leading,var(--text-base--line-height))}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading,var(--text-lg--line-height))}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading,var(--text-xs--line-height))}.leading-relaxed{--tw-leading:var(--leading-relaxed);line-height:var(--leading-relaxed)}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold)}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium)}.font-normal{--tw-font-weight:var(--font-weight-normal);font-weight:var(--font-weight-normal)}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold)}.tracking-tight{--tw-tracking:var(--tracking-tight);letter-spacing:var(--tracking-tight)}.text-\[\#05070d\]{color:#05070d}.text-indigo-300{color:var(--color-indigo-300)}.text-orange-300{color:var(--color-orange-300)}.text-pink-300{color:var(--color-pink-300)}.text-purple-300{color:var(--color-purple-300)}.text-rose-300{color:var(--color-rose-300)}.text-sky-300{color:var(--color-sky-300)}.text-slate-100{color:var(--color-slate-100)}.text-slate-300{color:var(--color-slate-300)}.text-slate-400{color:var(--color-slate-400)}.text-slate-500{color:var(--color-slate-500)}.text-slate-600{color:var(--color-slate-600)}.text-teal-300{color:var(--color-teal-300)}.text-white{color:var(--color-white)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-25{opacity:.25}.mix-blend-screen{mix-blend-mode:screen}.shadow-\[0_0_40px_-8px_rgba\(56\,189\,248\,0\.6\)\]{--tw-shadow:0 0 40px -8px var(--tw-shadow-color,#38bdf899);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.outline{outline-style:var(--tw-outline-style);outline-width:1px}.blur-\[130px\]{--tw-blur:blur(130px);filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.filter{filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.backdrop-blur-md{--tw-backdrop-blur:blur(var(--blur-md));-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.transition{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,opacity,box-shadow,transform,translate,scale,rotate,filter,-webkit-backdrop-filter,backdrop-filter,display,content-visibility,overlay,pointer-events;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-colors{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.ease-in-out{--tw-ease:var(--ease-in-out);transition-timing-function:var(--ease-in-out)}@media (hover:hover){.hover\:border-sky-400\/40:hover{border-color:#00bcfe66}@supports (color:color-mix(in lab, red, red)){.hover\:border-sky-400\/40:hover{border-color:color-mix(in oklab, var(--color-sky-400) 40%, transparent)}}.hover\:bg-indigo-400\/20:hover{background-color:#7d87ff33}@supports (color:color-mix(in lab, red, red)){.hover\:bg-indigo-400\/20:hover{background-color:color-mix(in oklab, var(--color-indigo-400) 20%, transparent)}}.hover\:bg-orange-400\/20:hover{background-color:#ff8b1a33}@supports (color:color-mix(in lab, red, red)){.hover\:bg-orange-400\/20:hover{background-color:color-mix(in oklab, var(--color-orange-400) 20%, transparent)}}.hover\:bg-pink-400\/20:hover{background-color:#fb64b633}@supports (color:color-mix(in lab, red, red)){.hover\:bg-pink-400\/20:hover{background-color:color-mix(in oklab, var(--color-pink-400) 20%, transparent)}}.hover\:bg-purple-400\/20:hover{background-color:#c07eff33}@supports (color:color-mix(in lab, red, red)){.hover\:bg-purple-400\/20:hover{background-color:color-mix(in oklab, var(--color-purple-400) 20%, transparent)}}.hover\:bg-rose-400\/20:hover{background-color:#ff667f33}@supports (color:color-mix(in lab, red, red)){.hover\:bg-rose-400\/20:hover{background-color:color-mix(in oklab, var(--color-rose-400) 20%, transparent)}}.hover\:bg-sky-300:hover{background-color:var(--color-sky-300)}.hover\:bg-sky-400\/20:hover{background-color:#00bcfe33}@supports (color:color-mix(in lab, red, red)){.hover\:bg-sky-400\/20:hover{background-color:color-mix(in oklab, var(--color-sky-400) 20%, transparent)}}.hover\:bg-slate-200:hover{background-color:var(--color-slate-200)}.hover\:bg-teal-400\/20:hover{background-color:#00d3bd33}@supports (color:color-mix(in lab, red, red)){.hover\:bg-teal-400\/20:hover{background-color:color-mix(in oklab, var(--color-teal-400) 20%, transparent)}}.hover\:text-sky-200:hover{color:var(--color-sky-200)}.hover\:text-sky-300:hover{color:var(--color-sky-300)}.hover\:text-white:hover{color:var(--color-white)}}@media (min-width:40rem){.sm\:col-span-2{grid-column:span 2/span 2}.sm\:h-32{height:calc(var(--spacing) * 32)}.sm\:w-32{width:calc(var(--spacing) * 32)}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:px-6{padding-inline:calc(var(--spacing) * 6)}.sm\:text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading,var(--text-3xl--line-height))}.sm\:text-4xl{font-size:var(--text-4xl);line-height:var(--tw-leading,var(--text-4xl--line-height))}.sm\:text-6xl{font-size:var(--text-6xl);line-height:var(--tw-leading,var(--text-6xl--line-height))}.sm\:text-base{font-size:var(--text-base);line-height:var(--tw-leading,var(--text-base--line-height))}.sm\:text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.sm\:text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}}@media (min-width:48rem){.md\:col-span-2{grid-column:span 2/span 2}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:text-7xl{font-size:var(--text-7xl);line-height:var(--tw-leading,var(--text-7xl--line-height))}}@media (min-width:64rem){.lg\:col-span-1{grid-column:span 1/span 1}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}}@property --tw-translate-x{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-y{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-z{syntax:"*";inherits:false;initial-value:0}@property --tw-rotate-x{syntax:"*";inherits:false}@property --tw-rotate-y{syntax:"*";inherits:false}@property --tw-rotate-z{syntax:"*";inherits:false}@property --tw-skew-x{syntax:"*";inherits:false}@property --tw-skew-y{syntax:"*";inherits:false}@property --tw-space-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-gradient-position{syntax:"*";inherits:false}@property --tw-gradient-from{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-via{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-to{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-stops{syntax:"*";inherits:false}@property --tw-gradient-via-stops{syntax:"*";inherits:false}@property --tw-gradient-from-position{syntax:"<length-percentage>";inherits:false;initial-value:0%}@property --tw-gradient-via-position{syntax:"<length-percentage>";inherits:false;initial-value:50%}@property --tw-gradient-to-position{syntax:"<length-percentage>";inherits:false;initial-value:100%}@property --tw-leading{syntax:"*";inherits:false}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-tracking{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-outline-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-blur{syntax:"*";inherits:false}@property --tw-brightness{syntax:"*";inherits:false}@property --tw-contrast{syntax:"*";inherits:false}@property --tw-grayscale{syntax:"*";inherits:false}@property --tw-hue-rotate{syntax:"*";inherits:false}@property --tw-invert{syntax:"*";inherits:false}@property --tw-opacity{syntax:"*";inherits:false}@property --tw-saturate{syntax:"*";inherits:false}@property --tw-sepia{syntax:"*";inherits:false}@property --tw-drop-shadow{syntax:"*";inherits:false}@property --tw-drop-shadow-color{syntax:"*";inherits:false}@property --tw-drop-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-drop-shadow-size{syntax:"*";inherits:false}@property --tw-backdrop-blur{syntax:"*";inherits:false}@property --tw-backdrop-brightness{syntax:"*";inherits:false}@property --tw-backdrop-contrast{syntax:"*";inherits:false}@property --tw-backdrop-grayscale{syntax:"*";inherits:false}@property --tw-backdrop-hue-rotate{syntax:"*";inherits:false}@property --tw-backdrop-invert{syntax:"*";inherits:false}@property --tw-backdrop-opacity{syntax:"*";inherits:false}@property --tw-backdrop-saturate{syntax:"*";inherits:false}@property --tw-backdrop-sepia{syntax:"*";inherits:false}@property --tw-ease{syntax:"*";inherits:false}
+</style>
+
+<style>
+  :root{
+    --bg: #05070d;
+    --surface: rgba(15, 23, 42, 0.55);
+    --border: rgba(148, 163, 184, 0.12);
+    --sky: #38bdf8;
+    --indigo: #818cf8;
+  }
+
+  html, body{ background: var(--bg); }
+
+  body{
+    color: #f1f5f9;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display{
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  ::selection{ background:#0ea5e9; color:#fff; }
+
+  /* subtle film-grain so the flat black doesn't look inert */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:0.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .glass{
+    background: var(--surface);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+  }
+
+  .gradient-text{
+    background: linear-gradient(100deg, #7dd3fc, #818cf8 65%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  a, button{ -webkit-tap-highlight-color: transparent; }
+
+  a:focus-visible, button:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--sky);
+    border-radius: 8px;
+  }
+
+  /* ---------- scroll depth / parallax ---------- */
+  .parallax-layer{ will-change: transform; }
+
+  /* ---------- 3D scroll reveal, applied once per section ---------- */
+  .reveal{
+    opacity: 0;
+    transform: perspective(1200px) rotateX(8deg) translateY(36px);
+    transform-origin: top center;
+    transition: opacity 0.9s cubic-bezier(.16,.84,.44,1), transform 0.9s cubic-bezier(.16,.84,.44,1);
+  }
+  .reveal.is-visible{
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0);
+  }
+
+  /* ---------- interactive tilt cards (mouse-driven, not autoplay) ---------- */
+  .tilt{
+    transform-style: preserve-3d;
+    transition: transform 0.35s cubic-bezier(.22,.9,.35,1), box-shadow 0.35s ease, border-color 0.35s ease;
+    will-change: transform;
+  }
+  .tilt:hover, .tilt:focus-within{
+    box-shadow: 0 30px 60px -25px rgba(56,189,248,0.35);
+    border-color: rgba(56,189,248,0.4);
+  }
+  .tilt > *{ transform: translateZ(24px); }
+
+  /* ---------- hero load-in sequence (single orchestrated moment) ---------- */
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(22px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  .load-in{ opacity:0; animation: fadeUp 0.8s cubic-bezier(.16,.84,.44,1) forwards; }
+  .load-in-1{ animation-delay: .05s; }
+  .load-in-2{ animation-delay: .2s; }
+  .load-in-3{ animation-delay: .35s; }
+  .load-in-4{ animation-delay: .5s; }
+
+  @keyframes drift{
+    0%, 100%{ transform: translate(0,0) scale(1); }
+    50%{ transform: translate(2%, -3%) scale(1.05); }
+  }
+  .drift{ animation: drift 14s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    .reveal{ opacity:1; transform:none; }
+    .tilt{ transform:none !important; }
+  }
+
+  .mono-tag{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  /* mobile menu */
+  #mobile-menu{ max-height:0; overflow:hidden; transition: max-height .4s ease; }
+  #mobile-menu.open{ max-height: 22rem; }
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <!-- Hero Section -->
-    <header class="bg-blue-900 text-white py-20 text-center px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Fayaz Khan</h1>
-        <p class="text-xl md:text-2xl font-light mb-6">Web Developer | AI Marketing Strategist | CRM Automation Specialist</p>
-        <p class="max-w-2xl mx-auto text-blue-100">
-            I am a hybrid developer and digital strategist specializing in AI-driven content, automated CRM workflows, and immersive web experiences.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="mailto:fayazkandhro551@gmail.com" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-full font-semibold transition">Email Me</a>
-            <a href="https://linkedin.com/in/fayaz-khan-114b33229" target="_blank" class="bg-white text-blue-900 hover:bg-gray-200 px-6 py-2 rounded-full font-semibold transition">LinkedIn</a>
-        </div>
-    </header>
+<body class="antialiased overflow-x-hidden">
+<div class="grain"></div>
 
-    <!-- About & Skills Section -->
-    <section class="max-w-5xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-12">
-        <div>
-            <h2 class="text-3xl font-bold mb-4 text-gray-900">About Me</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-                With a strong foundation in Business and Information Technology, I currently drive digital initiatives and technical automation. My expertise spans technical development, data extraction, and creative marketing, allowing me to build comprehensive solutions that are visually engaging and structurally sound.
-            </p>
-            <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                <li><strong>Web Development & 3D Design:</strong> Building responsive, 3D animated websites.</li>
-                <li><strong>Automation & Data:</strong> Scraping local business data and designing Gemini/Antigravity CRM workflows.</li>
-                <li><strong>AI-Powered Marketing:</strong> Advanced prompt engineering and generative video models (Veo 3).</li>
-            </ul>
-        </div>
-        <div>
-            <h2 class="text-3xl font-bold mb-4 text-gray-900">Core Stack</h2>
-            <div class="flex flex-wrap gap-2">
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">HTML/CSS</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Tailwind CSS</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">JavaScript</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Python</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">C++</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Web Scraping</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">CRM Workflows</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Prompt Engineering</span>
-            </div>
-        </div>
-    </section>
+<!-- ================= NAV ================= -->
+<nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-[#05070d]/70 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5 font-display font-semibold text-base">
+      <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-indigo-500 flex items-center justify-center text-[#05070d] text-sm font-bold">FK</span>
+      Fayaz Khan
+    </a>
 
-    <!-- Projects Section -->
-    <section class="bg-gray-100 py-16 px-4">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">Live Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                
-                <!-- Project 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
-                    <h3 class="text-xl font-bold mb-2">Nexus Arcade VR</h3>
-                    <p class="text-gray-600 mb-4">A fully 3D animated website developed for an immersive virtual reality arcade experience.</p>
-                    <a href="https://nexusarcadevr.com/" target="_blank" class="text-blue-600 font-semibold hover:underline">View Website &rarr;</a>
-                </div>
+    <div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+      <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+      <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+      <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+      <a href="#demos" class="hover:text-white transition-colors">Demos</a>
+      <a href="#vault" class="hover:text-white transition-colors">Marketing</a>
+      <a href="#contact" class="px-4 py-2 rounded-full bg-white text-[#05070d] font-medium hover:bg-slate-200 transition-colors">Contact</a>
+    </div>
 
-                <!-- Project 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
-                    <h3 class="text-xl font-bold mb-2">Supreme Tyres</h3>
-                    <p class="text-gray-600 mb-4">A responsive, 3D animated digital storefront developed for a local automotive business.</p>
-                    <a href="https://supreme-tyres.co.uk/" target="_blank" class="text-blue-600 font-semibold hover:underline">View Website &rarr;</a>
-                </div>
+    <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg glass">
+      <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="menu-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
 
-                <!-- Project 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
-                    <h3 class="text-xl font-bold mb-2">Automotive Booking System</h3>
-                    <p class="text-gray-600 mb-4">A custom customer vehicle booking system designed and implemented for 'Need 4 Speed Tuning' and 'ECU & Immobilizer Repair'.</p>
-                </div>
+  <div id="mobile-menu" class="md:hidden border-t border-white/5">
+    <div class="px-5 py-4 flex flex-col gap-1 text-sm text-slate-300">
+      <a href="#stack" class="py-2.5">Stack</a>
+      <a href="#experience" class="py-2.5">Experience</a>
+      <a href="#projects" class="py-2.5">Projects</a>
+      <a href="#demos" class="py-2.5">Demos</a>
+      <a href="#vault" class="py-2.5">Marketing</a>
+      <a href="#contact" class="py-2.5 text-white">Contact</a>
+    </div>
+  </div>
+</nav>
 
-                <!-- Project 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
-                    <h3 class="text-xl font-bold mb-2">Local Business Demo Sites</h3>
-                    <p class="text-gray-600 mb-4">A series of animated demo websites tailored for local businesses utilizing targeted data scraped directly from Google Maps.</p>
-                </div>
+<!-- ================= HERO ================= -->
+<header id="top" class="relative min-h-[92vh] flex flex-col justify-center items-center text-center px-5 pt-16 overflow-hidden">
+  <div class="parallax-layer absolute top-[-30%] left-[-15%] w-[28rem] h-[28rem]">
+    <div class="drift w-full h-full bg-sky-600 rounded-full mix-blend-screen filter blur-[130px] opacity-25"></div>
+  </div>
+  <div class="parallax-layer absolute bottom-[-25%] right-[-15%] w-[28rem] h-[28rem]">
+    <div class="drift w-full h-full bg-indigo-600 rounded-full mix-blend-screen filter blur-[130px] opacity-25" style="animation-delay:-7s"></div>
+  </div>
 
-            </div>
-        </div>
-    </section>
+  <!-- Using an Unsplash placeholder since profile.jpg won't load from a local file in this environment -->
+  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="Fayaz Khan" class="load-in load-in-1 w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-sky-400/40 shadow-[0_0_40px_-8px_rgba(56,189,248,0.6)] mb-7 object-cover relative z-10">
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>&copy; 2026 Fayaz Khan. All Rights Reserved.</p>
-        <p class="mt-2"><a href="https://github.com/Fayazkhan551-r" target="_blank" class="hover:text-white transition">github.com/Fayazkhan551-r</a></p>
-    </footer>
+  <h1 class="load-in load-in-2 font-display text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight mb-4 relative z-10 max-w-4xl">
+    Fayaz <span class="gradient-text">Khan</span>
+  </h1>
+
+  <p class="load-in load-in-3 text-base sm:text-xl text-slate-300 font-normal mb-9 relative z-10 max-w-xl">
+    Web Developer, AI marketing strategist and CRM automation specialist — building sites, ad campaigns and workflows for real local businesses.
+  </p>
+
+  <div class="load-in load-in-4 flex flex-wrap justify-center gap-3 relative z-10">
+    <a href="mailto:fayazkandhro551@gmail.com" class="px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#05070d] font-semibold text-sm transition-colors">Email me</a>
+    <a href="https://www.linkedin.com/in/fayaz-khan-114b33229/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full glass hover:border-sky-400/40 text-slate-100 font-medium text-sm transition-colors flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="6.5" y1="9.5" x2="6.5" y2="17"/><circle cx="6.5" cy="6.3" r="0.6" fill="currentColor"/><line x1="10.8" y1="9.5" x2="10.8" y2="17"/><path d="M10.8 12.8c0-2 2-3.2 3.6-3.2s2.6 1 2.6 3.2v4.2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://drive.google.com/drive/folders/1eL1NcgFEXieqObalINKqrmGqpX5onHLf?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full glass hover:border-sky-400/40 text-sky-300 font-medium text-sm transition-colors flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      AI Content Vault
+    </a>
+  </div>
+
+  <a href="#stack" aria-label="Scroll to content" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-sky-300 transition-colors z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </a>
+</header>
+
+<!-- ================= STACK ================= -->
+<section id="stack" class="reveal max-w-7xl mx-auto py-14 px-5 border-y border-white/5 text-center">
+  <h2 class="font-display text-lg text-slate-300 mb-6">What I work with</h2>
+  <div class="flex flex-wrap lg:flex-nowrap justify-center items-center gap-2.5">
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-sky-300 text-xs sm:text-sm">HTML / Tailwind CSS</span>
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-sky-300 text-xs sm:text-sm">JavaScript / Python</span>
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-indigo-300 text-xs sm:text-sm">Web Scraping</span>
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-indigo-300 text-xs sm:text-sm">Gemini &amp; Antigravity CRM</span>
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-slate-300 text-xs sm:text-sm">Prompt Engineering</span>
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-slate-300 text-xs sm:text-sm">Veo 3 / AI Video</span>
+    <span class="mono-tag whitespace-nowrap px-4 py-2 rounded-md glass text-slate-300 text-xs sm:text-sm">Meta &amp; Google Ads</span>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="reveal max-w-6xl mx-auto pb-20 pt-10 px-5">
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="tilt glass p-7 rounded-2xl">
+      <div class="w-10 h-10 rounded-lg bg-sky-400/10 flex items-center justify-center mb-5 text-sky-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      </div>
+      <h3 class="font-display text-lg font-semibold mb-3">AI content &amp; marketing</h3>
+      <ul class="text-sm text-slate-400 space-y-2 leading-relaxed">
+        <li>AI-powered marketing content and video ads with Veo 3, AI avatars and voice tools</li>
+        <li>Marketing scripts for VR, MR and gaming products, including paid campaigns</li>
+        <li>AI-generated image carousels and blog content</li>
+      </ul>
+    </div>
+
+    <div class="tilt glass p-7 rounded-2xl">
+      <div class="w-10 h-10 rounded-lg bg-indigo-400/10 flex items-center justify-center mb-5 text-indigo-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>
+      </div>
+      <h3 class="font-display text-lg font-semibold mb-3">Leads &amp; automation</h3>
+      <ul class="text-sm text-slate-400 space-y-2 leading-relaxed">
+        <li>Scraping Google Maps for local business leads</li>
+        <li>Automated CRM workflows built with Antigravity and Gemini</li>
+        <li>Publishing and managing website blogs</li>
+      </ul>
+    </div>
+
+    <div class="tilt glass p-7 rounded-2xl">
+      <div class="w-10 h-10 rounded-lg bg-slate-400/10 flex items-center justify-center mb-5 text-slate-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3 class="font-display text-lg font-semibold mb-3">VR/MR &amp; QA testing</h3>
+      <ul class="text-sm text-slate-400 space-y-2 leading-relaxed">
+        <li>VR and MR game testing for usability and performance</li>
+        <li>Android and iOS application UI design</li>
+        <li>Cross-platform app and game testing with dev-team feedback</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="reveal max-w-6xl mx-auto py-20 px-5">
+  <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-12 text-center">Live production sites</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="tilt glass p-6 rounded-2xl flex flex-col">
+      <div class="w-11 h-11 rounded-lg bg-sky-400/10 flex items-center justify-center mb-5 text-sky-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44a.98.98 0 0 1-.94 0l-7.9-4.44A1 1 0 0 1 3.2 16.5v-9a1 1 0 0 1 .53-.88l7.9-4.44a.98.98 0 0 1 .94 0l7.9 4.44c.32.17.53.5.53.88z"/><path d="M3.5 7.6l8.5 4.9 8.5-4.9M12 21.5v-9"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Nexus Arcade VR</h3>
+      <p class="text-slate-400 mb-6 text-sm flex-1">A fully 3D animated web experience built for immersive virtual reality.</p>
+      <a href="https://nexusarcadevr.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-300 hover:text-sky-200 font-medium text-sm">
+        Visit live site
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="tilt glass p-6 rounded-2xl flex flex-col">
+      <div class="w-11 h-11 rounded-lg bg-indigo-400/10 flex items-center justify-center mb-5 text-indigo-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="3" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="21" y2="12"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Supreme Tyres</h3>
+      <p class="text-slate-400 mb-6 text-sm flex-1">A responsive, 3D animated digital storefront built to maximise local conversions.</p>
+      <a href="https://supreme-tyres.co.uk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-300 hover:text-sky-200 font-medium text-sm">
+        Visit live site
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="tilt glass p-6 rounded-2xl flex flex-col md:col-span-2 lg:col-span-1">
+      <div class="w-11 h-11 rounded-lg bg-slate-400/10 flex items-center justify-center mb-5 text-slate-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4"/><path d="M4 21v-3.34a4 4 0 0 1 1.17-2.83L8 12l2.83 2.83a4 4 0 0 0 5.66 0L19 12"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Need 4 Speed Tuning</h3>
+      <p class="text-slate-400 mb-6 text-sm flex-1">Custom CRM and customer vehicle-booking architecture for a local tuning shop.</p>
+      <a href="https://need4speedtuningautomotive.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-300 hover:text-sky-200 font-medium text-sm">
+        Visit live site
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEMOS ================= -->
+<section id="demos" class="reveal max-w-6xl mx-auto py-20 px-5">
+  <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3 text-center">Local business demos</h2>
+  <p class="text-center text-slate-400 mb-12 max-w-2xl mx-auto text-sm sm:text-base">
+    Custom HTML prototypes built from local business data scraped off Google Maps. Each card names the exact file — open it to view the live demo in your browser.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <div class="tilt glass p-5 rounded-xl border-l-2 border-l-sky-400/60">
+      <h4 class="text-base font-semibold mb-1">Annie's Cafe</h4>
+      <p class="text-sm text-slate-400 mb-3">Single-file Tailwind landing page</p>
+      <div class="flex items-center justify-between gap-3">
+        <span class="mono-tag text-xs text-slate-500">annies-cafe.html</span>
+        <a href="demos/annies-cafe.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full bg-sky-400/10 text-sky-300 hover:bg-sky-400/20 transition-colors">
+          View demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="tilt glass p-5 rounded-xl border-l-2 border-l-indigo-400/60">
+      <h4 class="text-base font-semibold mb-1">Bollywood Cafe</h4>
+      <p class="text-sm text-slate-400 mb-3">Restaurant booking flow</p>
+      <div class="flex items-center justify-between gap-3">
+        <span class="mono-tag text-xs text-slate-500">bollywood-cafe.html</span>
+        <a href="demos/bollywood-cafe.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full bg-indigo-400/10 text-indigo-300 hover:bg-indigo-400/20 transition-colors">
+          View demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="tilt glass p-5 rounded-xl border-l-2 border-l-purple-400/60">
+      <h4 class="text-base font-semibold mb-1">Kunafa Tea</h4>
+      <p class="text-sm text-slate-400 mb-3">Dessert shop menu showcase</p>
+      <div class="flex items-center justify-between gap-3">
+        <span class="mono-tag text-xs text-slate-500">kunafa-tea.html</span>
+        <a href="demos/kunafa-tea.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full bg-purple-400/10 text-purple-300 hover:bg-purple-400/20 transition-colors">
+          View demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="tilt glass p-5 rounded-xl border-l-2 border-l-pink-400/60">
+      <h4 class="text-base font-semibold mb-1">STUDIO Hair Salon</h4>
+      <p class="text-sm text-slate-400 mb-3">Service-based business layout</p>
+      <div class="flex items-center justify-between gap-3">
+        <span class="mono-tag text-xs text-slate-500">studio.html</span>
+        <a href="demos/studio.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full bg-pink-400/10 text-pink-300 hover:bg-pink-400/20 transition-colors">
+          View demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="tilt glass p-5 rounded-xl border-l-2 border-l-rose-400/60">
+      <h4 class="text-base font-semibold mb-1">Tasty Bites</h4>
+      <p class="text-sm text-slate-400 mb-3">Local eatery digital storefront</p>
+      <div class="flex items-center justify-between gap-3">
+        <span class="mono-tag text-xs text-slate-500">tasty-bites.html</span>
+        <a href="demos/tasty-bites.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full bg-rose-400/10 text-rose-300 hover:bg-rose-400/20 transition-colors">
+          View demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="tilt glass p-5 rounded-xl border-l-2 border-l-orange-400/60">
+      <h4 class="text-base font-semibold mb-1">The Lunch Box</h4>
+      <p class="text-sm text-slate-400 mb-3">Quick-service food ordering</p>
+      <div class="flex items-center justify-between gap-3">
+        <span class="mono-tag text-xs text-slate-500">the-lunch-box.html</span>
+        <a href="demos/the-lunch-box.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full bg-orange-400/10 text-orange-300 hover:bg-orange-400/20 transition-colors">
+          View demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <p class="text-center text-slate-600 text-xs mt-8">Demo buttons open the matching file from <span class="mono-tag">/demos/</span> in a new tab — host this page with that folder alongside it for the links to resolve.</p>
+</section>
+
+<!-- ================= VAULT + MARKETING ================= -->
+<section id="vault" class="reveal max-w-6xl mx-auto py-20 px-5">
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <div class="tilt glass p-8 rounded-2xl">
+      <div class="w-11 h-11 rounded-lg bg-sky-400/10 flex items-center justify-center mb-6 text-sky-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3 class="font-display text-2xl font-semibold mb-3">AI Content Vault</h3>
+      <p class="text-slate-400 text-sm leading-relaxed mb-7">
+        A running archive of the AI-generated marketing assets I produce day to day — video ads made with Veo 3 and AI avatars, voice-over reads, and image carousels — organised by client and platform.
+      </p>
+      <a href="https://drive.google.com/drive/folders/1eL1NcgFEXieqObalINKqrmGqpX5onHLf?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#05070d] font-semibold text-sm transition-colors">
+        Open Google Drive folder
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="tilt glass p-8 rounded-2xl">
+      <div class="w-11 h-11 rounded-lg bg-indigo-400/10 flex items-center justify-center mb-6 text-indigo-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <h3 class="font-display text-2xl font-semibold mb-3">Digital marketing &amp; ad campaigns</h3>
+      <p class="text-slate-400 text-sm leading-relaxed mb-6">
+        I plan and run performance-driven ad campaigns for local and online businesses — from Meta and Google Ads setup to the organic content that keeps a funnel warm between paid pushes. Recent work includes lead-generation campaigns built on scraped Google Maps data, with the ad creative produced in-house using AI tools.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="mono-tag px-3 py-1.5 rounded-md bg-white/5 text-slate-300 text-xs">Meta Ads</span>
+        <span class="mono-tag px-3 py-1.5 rounded-md bg-white/5 text-slate-300 text-xs">Google Ads</span>
+        <span class="mono-tag px-3 py-1.5 rounded-md bg-white/5 text-slate-300 text-xs">Lead Generation</span>
+        <span class="mono-tag px-3 py-1.5 rounded-md bg-white/5 text-slate-300 text-xs">Organic Content</span>
+        <span class="mono-tag px-3 py-1.5 rounded-md bg-white/5 text-slate-300 text-xs">Social Media Mgmt</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT / FOOTER ================= -->
+<footer id="contact" class="reveal border-t border-white/5 py-16 px-5 text-center">
+  <h2 class="font-display text-2xl sm:text-3xl font-semibold mb-3">Let's build something</h2>
+  <p class="text-slate-400 text-sm mb-8">Open to freelance and full-time work in web development and AI-driven marketing.</p>
+
+  <div class="flex flex-wrap justify-center gap-3 mb-10">
+    <a href="mailto:fayazkandhro551@gmail.com" class="px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#05070d] font-semibold text-sm transition-colors">fayazkandhro551@gmail.com</a>
+  </div>
+
+  <div class="flex justify-center gap-5 text-slate-500 mb-10">
+    <a href="https://github.com/Fayazkhan551-r" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-sky-300 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/fayaz-khan-114b33229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-sky-300 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="6.5" y1="9.5" x2="6.5" y2="17"/><circle cx="6.5" cy="6.3" r="0.6" fill="currentColor"/><line x1="10.8" y1="9.5" x2="10.8" y2="17"/><path d="M10.8 12.8c0-2 2-3.2 3.6-3.2s2.6 1 2.6 3.2v4.2"/></svg>
+    </a>
+  </div>
+
+  <p class="text-slate-600 text-xs">© 2026 Fayaz Khan. All rights reserved.</p>
+</footer>
+
+<script>
+  // ---------- mobile menu ----------
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    iconOpen.classList.toggle('hidden', isOpen);
+    iconClose.classList.toggle('hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }));
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- 3D scroll reveal ----------
+  if (!reduceMotion){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
+  // ---------- interactive 3D tilt on cards ----------
+  if (!reduceMotion && window.matchMedia('(hover: hover)').matches){
+    document.querySelectorAll('.tilt').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+  }
+
+  // ---------- parallax background blobs while scrolling ----------
+  if (!reduceMotion){
+    const blobs = document.querySelectorAll('.parallax-layer');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      blobs.forEach((b, i) => {
+        b.style.transform = `translateY(${y * (i === 0 ? 0.15 : -0.12)}px)`;
+      });
+    }, { passive: true });
+  }
+</script>
 
 </body>
 </html>
